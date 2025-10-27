@@ -95,7 +95,27 @@ Click "Start" button next to the device to begin simulation.
 ### Video Tutorial
 
 {% hint style="success" %}
-**Watch:** Creating your first device (2 minutes)
+**Watch:** Creating your first device in the GPS Emulator (2 minutes)
+{% endhint %}
+
+{% embed url="https://www.youtube.com/watch?v=YOUR_VIDEO_ID" %}
+Complete walkthrough of creating your first GPS device
+{% endembed %}
+
+**What you'll learn:**
+- Opening the web dashboard
+- Selecting a protocol (TK103)
+- Filling device information
+- Starting the device simulation
+- Viewing device in Traccar
+
+{% hint style="info" %}
+**Video file location:** `C:\Users\PRO\Downloads\Codecanyon\Universal GPS Tracker Emulator.webm`
+
+**To add to GitBook:**
+1. Upload video to YouTube or Vimeo
+2. Replace `YOUR_VIDEO_ID` above with actual video ID
+3. GitBook will embed the video player automatically
 {% endhint %}
 
 ---
