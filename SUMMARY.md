@@ -15,7 +15,7 @@
 * [Creating Devices](user-guide/creating-devices.md)
 * [Managing Devices](user-guide/managing-devices.md)
 * [Configuration](user-guide/configuration.md)
-* [Routes & Tracking](user-guide/routes-and-tracking.md)
+* [Custom Routes](user-guide/custom-routes.md)
 * [Traccar Integration](user-guide/traccar-integration.md)
 
 ## Protocols
@@ -31,14 +31,9 @@
 
 ## API Reference
 
-* [REST API Overview](api-reference/rest-api.md)
+* [REST API](api-reference/rest-api.md)
+* [WebSocket API](api-reference/websocket.md)
 * [Authentication](api-reference/authentication.md)
-* [System & Status](api-reference/system-and-status.md)
-* [Device Management](api-reference/device-management.md)
-* [Device Control](api-reference/device-control.md)
-* [Routes API](api-reference/routes-api.md)
-* [Traccar API](api-reference/traccar-api.md)
-* [WebSocket Events](api-reference/websocket-events.md)
 * [Error Codes](api-reference/error-codes.md)
 * [Code Examples](api-reference/code-examples.md)
 
@@ -46,7 +41,7 @@
 
 * [Performance Tuning](advanced/performance-tuning.md)
 * [Security Settings](advanced/security-settings.md)
-* [Custom Routes](advanced/custom-routes.md)
+* [Docker Deployment](advanced/docker.md)
 * [Multiple Instances](advanced/multiple-instances.md)
 * [CI/CD Integration](advanced/ci-cd-integration.md)
 * [Production Deployment](advanced/production-deployment.md)
