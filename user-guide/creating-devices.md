@@ -39,7 +39,27 @@ http://localhost:5000
 
 Find the button on the dashboard homepage.
 
+![Create Device Button](/.gitbook/assets/screenshots/create-device-button.png)
+
+{% hint style="info" %}
+**📸 IMAGE À CAPTURER:**
+- Dashboard avec bouton "Create Device" visible
+- Ajouter flèche rouge pointant vers le bouton
+- Ajouter rectangle rouge autour du bouton
+- Annotation: "Click here to create a new device"
+{% endhint %}
+
 **3. Fill Device Information**
+
+![Protocol Selection Dropdown](/.gitbook/assets/screenshots/protocol-dropdown-open.png)
+
+{% hint style="info" %}
+**📸 IMAGE À CAPTURER:**
+- Modal "Create Device" ouvert
+- Dropdown "Protocol" cliqué et liste déroulée
+- Montrer protocoles: TK103, GT06, Teltonika, OsmAnd, GPS103, etc.
+- Au moins 10 protocoles visibles
+{% endhint %}
 
 {% tabs %}
 {% tab title="Required Fields" %}
@@ -78,13 +98,55 @@ Find the button on the dashboard homepage.
 {% endtab %}
 {% endtabs %}
 
+![Device Form Filled Example](/.gitbook/assets/screenshots/device-form-filled-tk103.png)
+
+{% hint style="info" %}
+**📸 IMAGE À CAPTURER:**
+- Formulaire de création rempli avec exemple:
+  - Protocol: TK103
+  - Device Model: TK103-2B
+  - Device ID: (auto-generated) ou exemple: 357938506404024
+  - Route: Paris
+  - Speed: 50 km/h
+  - Description: "Test Vehicle 1"
+{% endhint %}
+
 **4. Click "Create Device"**
 
 Device is created and appears in device list.
 
+![Device Created in List](/.gitbook/assets/screenshots/device-created-in-list.png)
+
+{% hint style="info" %}
+**📸 IMAGE À CAPTURER:**
+- Dashboard après création
+- Device apparaît dans la liste
+- Ajouter flèche rouge pointant vers le nouveau device
+- Statut: "Stopped" (gris)
+- Annotation: "Your new device"
+{% endhint %}
+
 **5. Start Device**
 
 Click "Start" button next to the device to begin simulation.
+
+![Complete Workflow Animation](/.gitbook/assets/gifs/create-device-workflow.gif)
+
+{% hint style="success" %}
+**🎬 GIF ANIMÉ À CRÉER:**
+- Durée: 10-15 secondes
+- Workflow complet:
+  1. Clic sur "Create Device" (2s)
+  2. Sélection protocole TK103 (2s)
+  3. Remplissage formulaire rapide (3s)
+  4. Clic "Create" (1s)
+  5. Device apparaît dans liste (2s)
+  6. Clic "Start" (1s)
+  7. Device passe à "Running" (vert) (2s)
+- Outil: ScreenToGif
+- FPS: 15
+- Taille: < 2MB
+{% endhint %}
 
 {% hint style="info" %}
 **Device ID Format:** Most protocols use IMEI format (15 digits). Leave empty for auto-generation.

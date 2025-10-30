@@ -35,6 +35,23 @@ The Universal GPS Tracker Emulator provides a comprehensive REST API for:
 - Integrating with Traccar
 - Real-time monitoring via WebSocket
 
+![API Architecture Overview](/.gitbook/assets/diagrams/api-architecture-overview.svg)
+
+{% hint style="info" %}
+**📸 DIAGRAMME À CRÉER:**
+- Architecture diagram montrant:
+  - Client (Browser/Postman/cURL) en haut
+  - REST API Layer (HTTP/HTTPS)
+  - WebSocket Layer (Socket.IO)
+  - Emulator Core (Python/Flask)
+  - Protocol Servers (TK103, GT06, etc.)
+  - Traccar Integration
+- Flèches montrant les flux de données
+- Ports et protocoles annotés
+- Style: Architecture diagram professionnel
+- Format: SVG
+{% endhint %}
+
 **API Version:** v2
 **Protocol:** HTTP/HTTPS
 **Data Format:** JSON
@@ -110,6 +127,24 @@ http://localhost:5000/api/status
 ## Response Format
 
 All API responses use JSON format with consistent structure.
+
+![API Response Structure](/.gitbook/assets/diagrams/api-response-structure.svg)
+
+{% hint style="info" %}
+**📸 DIAGRAMME À CRÉER:**
+- Diagramme montrant structure des réponses API:
+  - Success Response (boîte verte):
+    - success: true
+    - data: {...}
+    - message: "..."
+  - Error Response (boîte rouge):
+    - success: false
+    - error: "..."
+    - code: "..."
+    - details: "..."
+- Style: Clean JSON structure diagram
+- Format: SVG
+{% endhint %}
 
 ### Success Response
 
@@ -220,6 +255,19 @@ API_RATE_LIMITING=false
 #### GET /api/status
 
 Get system status and all devices overview.
+
+![API Status Endpoint in Postman](/.gitbook/assets/screenshots/api-status-endpoint-postman.png)
+
+{% hint style="info" %}
+**📸 IMAGE À CAPTURER:**
+- Screenshot Postman montrant requête GET /api/status
+- URL: http://localhost:5000/api/status visible
+- Response JSON formatté et visible
+- Status 200 OK en vert
+- Response body montrant system info et devices
+- Onglets: Body, Headers, Test Results visibles
+- Résolution: 1920x1080
+{% endhint %}
 
 **Request:**
 ```bash
@@ -336,6 +384,20 @@ curl http://localhost:5000/api/protocol_info/tk103
 #### POST /api/multidevice/devices
 
 Create a new GPS device.
+
+![API Create Device in Postman](/.gitbook/assets/screenshots/api-create-device-postman.png)
+
+{% hint style="info" %}
+**📸 IMAGE À CAPTURER:**
+- Screenshot Postman montrant requête POST /api/multidevice/devices
+- Method: POST sélectionné
+- URL: http://localhost:5000/api/multidevice/devices
+- Headers tab montrant Content-Type: application/json
+- Body tab (raw, JSON) montrant request payload complet
+- Response 201 Created visible
+- Response body montrant device créé
+- Résolution: 1920x1080
+{% endhint %}
 
 **Request:**
 ```bash
@@ -1021,6 +1083,23 @@ curl http://localhost:5000/api/config
 
 Real-time updates via Socket.IO WebSocket.
 
+![WebSocket Connection Flow](/.gitbook/assets/diagrams/websocket-connection-flow.svg)
+
+{% hint style="info" %}
+**📸 DIAGRAMME À CRÉER:**
+- Diagramme de flux WebSocket:
+  - Client connects to ws://localhost:5000
+  - Server emits: connect event
+  - Server emits: device_update (real-time)
+  - Server emits: device_started
+  - Server emits: device_stopped
+  - Client can emit: start_emulator, stop_emulator
+- Flèches bidirectionnelles montrant communication
+- Events annotés avec leur payload
+- Style: Sequence diagram
+- Format: SVG
+{% endhint %}
+
 **Connection:**
 ```javascript
 // JavaScript
@@ -1429,6 +1508,41 @@ echo "Complete!"
 ## Postman Collection
 
 ### Import Postman Collection
+
+![Postman Collection Overview](/.gitbook/assets/screenshots/postman-collection-overview.png)
+
+{% hint style="info" %}
+**📸 IMAGE À CAPTURER:**
+- Screenshot Postman montrant collection complète importée
+- Sidebar gauche montrant "GPS Emulator API" collection
+- Tous les endpoints organisés par dossiers:
+  - System & Status
+  - Device Management
+  - Device Control
+  - Routes & Tracking
+  - Traccar Integration
+- Variables d'environnement visible (base_url, device_id)
+- Quelques requêtes exécutées avec succès (checkmarks verts)
+- Résolution: 1920x1080
+{% endhint %}
+
+![API Testing Workflow in Postman](/.gitbook/assets/gifs/api-testing-postman-workflow.gif)
+
+{% hint style="info" %}
+**📸 GIF ANIMÉ À CRÉER:**
+- Animation 25-30 secondes montrant workflow complet dans Postman:
+  1. Import collection
+  2. Set environment variables (base_url)
+  3. Send GET /api/status (success)
+  4. Send POST /api/multidevice/devices (create device)
+  5. Copy device_id from response
+  6. Send POST /api/multidevice/devices/{device_id}/start
+  7. Send GET /api/multidevice/devices/{device_id} (monitor)
+  8. Show green status 200 OK
+- Montrer les réponses JSON
+- Format: GIF optimisé < 8MB
+- FPS: 12-15
+{% endhint %}
 
 Create a file `gps-emulator-api.postman_collection.json`:
 

@@ -69,6 +69,22 @@ Password: admin
 
 ## Quick Setup (5 Minutes)
 
+![Traccar Integration Overview](/.gitbook/assets/diagrams/traccar-integration-overview.svg)
+
+{% hint style="info" %}
+**📸 DIAGRAMME À CRÉER:**
+- Diagramme d'architecture montrant:
+  - GPS Emulator (à gauche)
+  - Flèche avec "GPS Protocol Data (TK103, GT06, etc.)" vers Traccar Server
+  - Traccar Server (au milieu)
+  - Traccar Web Interface (à droite)
+  - Ports: 5002, 5023, etc. pour protocols
+  - Port: 8082 pour web interface
+- Style: Architecture diagram propre et professionnel
+- Format: SVG vectoriel
+- Couleurs: Bleu/Vert pour flux de données
+{% endhint %}
+
 ### Step 1: Configure Emulator
 
 Edit your `.env` file:
@@ -121,6 +137,20 @@ curl -X POST http://localhost:5000/api/multidevice/devices/DEVICE_ID/start
 {% endtabs %}
 
 ### Step 4: View in Traccar
+
+![Device in Traccar Map View](/.gitbook/assets/screenshots/traccar-device-map-view.png)
+
+{% hint style="info" %}
+**📸 IMAGE À CAPTURER:**
+- Screenshot Traccar web interface (http://localhost:8082)
+- Map montrant device EMU_TK103_xxx visible et en ligne (vert)
+- Position du device sur la carte (Paris par exemple)
+- Sidebar gauche montrant le device dans la liste
+- Panneau de détails montrant: speed, position, timestamp
+- Ajouter flèche vers device sur la carte
+- Annotation: "Device automatically created and online"
+- Résolution: 1920x1080
+{% endhint %}
 
 1. Open Traccar: http://localhost:8082
 2. Login with admin/admin
@@ -192,6 +222,20 @@ traccar:
 
 ### Understanding Ports
 
+![Traccar Port Configuration Diagram](/.gitbook/assets/diagrams/traccar-port-configuration.svg)
+
+{% hint style="info" %}
+**📸 DIAGRAMME À CRÉER:**
+- Diagramme montrant deux types de ports:
+  - Web Interface Port: 8082 (HTTP)
+  - Protocol Ports: 5001-5232 (TCP/UDP)
+- Emulator (gauche) → Protocol Ports → Traccar Server
+- User Browser → Port 8082 → Traccar Web Interface
+- Annoter chaque type de connexion
+- Style: Network diagram clair
+- Format: SVG
+{% endhint %}
+
 {% hint style="info" %}
 **Two types of ports:**
 1. **Web Interface Port** (8082) - For API/web access
@@ -216,6 +260,20 @@ traccar:
 ### Check Traccar Protocol Ports
 
 **Location:** Traccar's `traccar.xml` file
+
+![Traccar XML Configuration](/.gitbook/assets/screenshots/traccar-xml-config.png)
+
+{% hint style="info" %}
+**📸 IMAGE À CAPTURER:**
+- Screenshot du fichier traccar.xml ouvert dans un éditeur
+- Montrer les lignes de configuration des ports:
+  - <entry key='tk103.port'>5002</entry>
+  - <entry key='gt06.port'>5023</entry>
+  - etc.
+- Highlighter (surligner) les entrées de ports en jaune
+- Ajouter annotation: "Protocol port configuration"
+- Résolution: 1280x720
+{% endhint %}
 
 {% tabs %}
 {% tab title="Windows" %}
@@ -272,6 +330,21 @@ servers:
 If `TRACCAR_AUTO_CREATE_DEVICES=false`, create devices manually:
 
 ### Method 1: Traccar Web Interface
+
+![Traccar Add Device Dialog](/.gitbook/assets/screenshots/traccar-add-device-dialog.png)
+
+{% hint style="info" %}
+**📸 IMAGE À CAPTURER:**
+- Screenshot Traccar "Add Device" dialog ouvert
+- Champs visibles:
+  - Name: "Test Vehicle 001"
+  - Identifier: "357938506404024"
+  - Category: dropdown avec "Car" sélectionné
+- Bouton "Save" visible
+- Ajouter flèches vers les champs importants
+- Annotation: "Enter device identifier from emulator"
+- Résolution: 1280x720
+{% endhint %}
 
 **Step 1: Login to Traccar**
 - Go to http://localhost:8082
@@ -441,6 +514,38 @@ Lists all devices in Traccar.
 {% endtabs %}
 
 ### Monitor Real-Time Updates
+
+![Emulator and Traccar Side by Side](/.gitbook/assets/screenshots/emulator-traccar-side-by-side.png)
+
+{% hint style="info" %}
+**📸 IMAGE À CAPTURER:**
+- Split screen montrant:
+  - Gauche: Emulator dashboard (http://localhost:5000)
+  - Droite: Traccar map view (http://localhost:8082)
+- Même device visible dans les deux interfaces
+- Position synchronisée visible
+- Timestamps identiques ou très proches
+- Ajouter ligne ou flèche montrant la synchronisation
+- Annotation: "Real-time synchronization between emulator and Traccar"
+- Résolution: 1920x1080
+{% endhint %}
+
+![Traccar Integration Workflow](/.gitbook/assets/gifs/traccar-integration-workflow.gif)
+
+{% hint style="info" %}
+**📸 GIF ANIMÉ À CRÉER:**
+- Animation 20-30 secondes du workflow complet:
+  1. Configure emulator (.env file)
+  2. Create device in emulator
+  3. Start device
+  4. Switch to Traccar interface
+  5. Device appears automatically
+  6. Watch position updates in real-time
+- Montrer les deux interfaces (split screen ou alternance)
+- Ajouter annotations pour chaque étape
+- Format: GIF optimisé < 8MB
+- FPS: 10-15
+{% endhint %}
 
 **Watch device updates:**
 
