@@ -1,164 +1,169 @@
-# Installation
+# Installation Guide - Universal GPS Tracker Emulator
 
-Learn how to install the Universal GPS Tracker Emulator on your system.
-
----
-
-## Prerequisites
-
-Before installing, ensure you have:
-
-* Python 3.8 or higher
-* pip (Python package manager)
-* 500 MB free disk space
-* Administrative/sudo privileges (for some installations)
+Complete step-by-step installation guide for all platforms.
 
 ---
 
-## Installation Methods
+## Table of Contents
 
-{% tabs %}
-{% tab title="Windows" %}
+- [Quick Installation](#quick-installation)
+- [Detailed Installation](#detailed-installation)
+  - [Windows](#windows-installation)
+  - [Linux/Ubuntu](#linux-installation)
+  - [macOS](#macos-installation)
+  - [Docker](#docker-installation)
+- [Post-Installation](#post-installation)
+- [Troubleshooting](#troubleshooting)
+- [Uninstallation](#uninstallation)
+
+---
+
+## Quick Installation
+
+For experienced users:
+
+```bash
+# 1. Extract files
+unzip universal-gps-emulator.zip
+cd universal-gps-emulator
+
+# 2. Install Python dependencies
+pip install -r requirements.txt
+
+# 3. Start application
+python app.py
+
+# 4. Open browser
+# http://localhost:5000
+```
+
+Done! Continue to [Post-Installation](#post-installation) for configuration.
+
+---
+
+## Detailed Installation
+
 ### Windows Installation
 
-#### Step 1: Install Python
+#### Prerequisites
 
-1. Download Python from [python.org](https://www.python.org/downloads/)
-2. Run the installer
-3. **✅ CHECK:** "Add Python to PATH"
-4. Click "Install Now"
+1. **Python 3.8 or higher**
+   - Download from: https://www.python.org/downloads/
+   - During installation, **check "Add Python to PATH"**
+   - Verify installation:
+     ```cmd
+     python --version
+     ```
 
-#### Step 2: Verify Installation
+2. **Extract the Archive**
+   - Right-click `universal-gps-emulator.zip`
+   - Select "Extract All..."
+   - Choose destination folder
 
-```powershell
-python --version
-# Should show: Python 3.8.x or higher
+#### Installation Steps
 
-pip --version
-# Should show: pip 21.x or higher
-```
+1. **Open Command Prompt**
+   - Press `Win + R`
+   - Type `cmd` and press Enter
+   - Navigate to extracted folder:
+     ```cmd
+     cd C:\Users\YourName\Downloads\universal-gps-emulator
+     ```
 
-#### Step 3: Extract the Package
+2. **Install Dependencies**
+   ```cmd
+   pip install -r requirements.txt
+   ```
 
-1. Extract `Universal-GPS-Tracker-Emulator-v2.0.zip`
-2. Navigate to the `src` folder
+   If you get an error, try:
+   ```cmd
+   python -m pip install --upgrade pip
+   python -m pip install -r requirements.txt
+   ```
 
-#### Step 4: Install Dependencies
+3. **Configure Application (Optional)**
+   ```cmd
+   copy .env.example .env
+   notepad .env
+   ```
+   Edit configuration as needed (see CONFIGURATION.md)
 
-```powershell
-cd path\to\Universal-GPS-Tracker-Emulator-v2.0\src
-pip install -r requirements.txt
-```
+4. **Start Application**
+   ```cmd
+   python app.py
+   ```
 
-#### Step 5: Run the Emulator
+5. **Access Web Interface**
+   - Open browser
+   - Go to: http://localhost:5000
+   - You should see the dashboard!
 
-```powershell
+#### Create Desktop Shortcut (Optional)
+
+Create file `start-emulator.bat`:
+```batch
+@echo off
+cd C:\path\to\universal-gps-emulator
 python app.py
+pause
 ```
 
-#### Step 6: Access Dashboard
+---
 
-Open browser: **http://localhost:5000**
-
-{% hint style="success" %}
-**Success!** You should see the GPS Emulator dashboard.
-{% endhint %}
-
-### Common Windows Issues
-
-**Issue: Python not found**
-```powershell
-# Add Python to PATH manually
-# Control Panel > System > Advanced > Environment Variables
-# Add: C:\Python3x\ and C:\Python3x\Scripts\
-```
-
-**Issue: pip install fails**
-```powershell
-# Run as Administrator
-# Right-click Command Prompt > Run as administrator
-pip install -r requirements.txt
-```
-{% endtab %}
-
-{% tab title="Linux" %}
 ### Linux Installation
 
-#### Step 1: Install Python
+#### Prerequisites
 
-**Ubuntu/Debian:**
-```bash
-sudo apt update
-sudo apt install python3 python3-pip python3-venv
-```
+1. **Python 3.8+**
+   ```bash
+   # Ubuntu/Debian
+   sudo apt update
+   sudo apt install python3 python3-pip python3-venv
 
-**CentOS/RHEL:**
-```bash
-sudo yum install python3 python3-pip
-```
+   # CentOS/RHEL
+   sudo yum install python3 python3-pip
 
-**Arch Linux:**
-```bash
-sudo pacman -S python python-pip
-```
+   # Arch Linux
+   sudo pacman -S python python-pip
+   ```
 
-#### Step 2: Verify Installation
+2. **Extract Archive**
+   ```bash
+   unzip universal-gps-emulator.zip
+   cd universal-gps-emulator
+   ```
 
-```bash
-python3 --version
-# Should show: Python 3.8.x or higher
+#### Installation Steps
 
-pip3 --version
-# Should show: pip 21.x or higher
-```
+1. **Create Virtual Environment (Recommended)**
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
 
-#### Step 3: Extract the Package
+2. **Install Dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-```bash
-cd ~/Downloads
-unzip Universal-GPS-Tracker-Emulator-v2.0.zip
-cd Universal-GPS-Tracker-Emulator-v2.0/src
-```
+3. **Configure Application**
+   ```bash
+   cp .env.example .env
+   nano .env  # or vim, gedit, etc.
+   ```
 
-#### Step 4: Create Virtual Environment (Recommended)
+4. **Start Application**
+   ```bash
+   python app.py
+   ```
 
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
+5. **Access Web Interface**
+   Open browser: http://localhost:5000
 
-#### Step 5: Install Dependencies
+#### Run as System Service (Optional)
 
-```bash
-pip install -r requirements.txt
-```
+Create `/etc/systemd/system/gps-emulator.service`:
 
-#### Step 6: Run the Emulator
-
-```bash
-python app.py
-```
-
-#### Step 7: Access Dashboard
-
-Open browser: **http://localhost:5000**
-
-{% hint style="info" %}
-**Firewall:** You may need to allow port 5000 through firewall.
-```bash
-sudo ufw allow 5000/tcp
-```
-{% endhint %}
-
-### Running as System Service
-
-Create a systemd service:
-
-```bash
-sudo nano /etc/systemd/system/gps-emulator.service
-```
-
-Add this content:
 ```ini
 [Unit]
 Description=GPS Tracker Emulator
@@ -167,8 +172,9 @@ After=network.target
 [Service]
 Type=simple
 User=youruser
-WorkingDirectory=/path/to/src
-ExecStart=/usr/bin/python3 /path/to/src/app.py
+WorkingDirectory=/path/to/universal-gps-emulator
+Environment="PATH=/path/to/venv/bin"
+ExecStart=/path/to/venv/bin/python app.py
 Restart=always
 
 [Install]
@@ -181,118 +187,74 @@ sudo systemctl enable gps-emulator
 sudo systemctl start gps-emulator
 sudo systemctl status gps-emulator
 ```
-{% endtab %}
 
-{% tab title="macOS" %}
+---
+
 ### macOS Installation
 
-#### Step 1: Install Homebrew (if not installed)
+#### Prerequisites
 
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
+1. **Install Homebrew** (if not installed)
+   ```bash
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
 
-#### Step 2: Install Python
+2. **Install Python**
+   ```bash
+   brew install python@3.10
+   ```
 
-```bash
-brew install python@3.10
-```
+3. **Extract Archive**
+   ```bash
+   unzip universal-gps-emulator.zip
+   cd universal-gps-emulator
+   ```
 
-#### Step 3: Verify Installation
+#### Installation Steps
 
-```bash
-python3 --version
-# Should show: Python 3.8.x or higher
+1. **Create Virtual Environment**
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
 
-pip3 --version
-```
+2. **Install Dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-#### Step 4: Extract and Navigate
+3. **Configure**
+   ```bash
+   cp .env.example .env
+   nano .env
+   ```
 
-```bash
-cd ~/Downloads
-unzip Universal-GPS-Tracker-Emulator-v2.0.zip
-cd Universal-GPS-Tracker-Emulator-v2.0/src
-```
+4. **Start Application**
+   ```bash
+   python app.py
+   ```
 
-#### Step 5: Create Virtual Environment
+5. **Access**
+   http://localhost:5000
 
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
+---
 
-#### Step 6: Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-#### Step 7: Run the Emulator
-
-```bash
-python app.py
-```
-
-#### Step 8: Access Dashboard
-
-Open browser: **http://localhost:5000**
-
-{% hint style="warning" %}
-**macOS Security:** You may see a security warning. Go to System Preferences > Security & Privacy and click "Allow".
-{% endhint %}
-{% endtab %}
-
-{% tab title="Docker" %}
 ### Docker Installation
 
-#### Step 1: Install Docker
-
-Download from [docker.com](https://www.docker.com/get-started)
-
-#### Step 2: Create Dockerfile
-
-In the project root, create `Dockerfile`:
-
-```dockerfile
-FROM python:3.10-slim
-
-WORKDIR /app
-
-COPY src/requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-
-COPY src/ .
-
-EXPOSE 5000
-
-CMD ["python", "app.py"]
-```
-
-#### Step 3: Build Image
+#### Quick Start
 
 ```bash
-docker build -t gps-emulator:latest .
+# Build image
+docker build -t gps-emulator .
+
+# Run container
+docker run -d -p 5000:5000 --name gps-emulator gps-emulator
+
+# Access
+# http://localhost:5000
 ```
 
-#### Step 4: Run Container
-
-```bash
-docker run -d \
-  --name gps-emulator \
-  -p 5000:5000 \
-  -p 5002:5002 \
-  -p 5023:5023 \
-  -p 5027:5027 \
-  -v $(pwd)/config.yaml:/app/config.yaml \
-  gps-emulator:latest
-```
-
-#### Step 5: Access Dashboard
-
-Open browser: **http://localhost:5000**
-
-### Docker Compose
+#### Docker Compose
 
 Create `docker-compose.yml`:
 
@@ -304,107 +266,193 @@ services:
     build: .
     ports:
       - "5000:5000"
-      - "5002:5002"   # TK103
-      - "5023:5023"   # GT06
-      - "5027:5027"   # Teltonika
-      - "5055:5055"   # OsmAnd
-    volumes:
-      - ./config.yaml:/app/config.yaml
-      - ./data:/app/data
-    restart: unless-stopped
     environment:
       - WEB_HOST=0.0.0.0
       - WEB_PORT=5000
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    restart: unless-stopped
 ```
 
-Run with:
+Run:
 ```bash
 docker-compose up -d
 ```
-
-{% hint style="success" %}
-**Pro Tip:** Use Docker for easy deployment and isolation!
-{% endhint %}
-{% endtab %}
-{% endtabs %}
 
 ---
 
 ## Post-Installation
 
-### Verify Installation
+### 1. Verify Installation
 
-1. **Check Web Interface**
-   - Open http://localhost:5000
-   - You should see the dashboard
+Access http://localhost:5000
 
-2. **Check API**
-   ```bash
-   curl http://localhost:5000/api/status
-   ```
+You should see the dashboard with:
+- List of 86 protocols
+- "Create Device" button
+- Clean interface
 
-3. **Check Protocols**
-   ```bash
-   curl http://localhost:5000/api/protocols
-   ```
+### 2. Create Test Device
 
-### Configuration
+1. Click "Create Device"
+2. Select protocol: **TK103**
+3. Enter model: **TK103-2B**
+4. Device ID: Leave auto-generated
+5. Route: **Paris**
+6. Click "Create"
 
-After installation, configure the emulator:
+### 3. Start Simulation
 
-{% content-ref url="../user-guide/configuration.md" %}
-[configuration.md](../user-guide/configuration.md)
-{% endcontent-ref %}
+1. Find your device in the list
+2. Click "Start" button
+3. Status should change to "Running"
+4. Device is now sending GPS data!
+
+### 4. Test with Traccar (Optional)
+
+If you have Traccar installed:
+
+1. Create device in Traccar:
+   - Protocol: **tk103**
+   - Unique ID: Copy from emulator
+   - Port: **5002**
+
+2. Start emulator device
+3. Check Traccar - positions should appear!
 
 ---
 
-## Updating
+## Troubleshooting
 
-### Update to Latest Version
+### "Python not found"
 
-1. Download the new version
-2. Extract to new directory
-3. Copy your `config.yaml` from old installation
-4. Copy your `.env` file (if customized)
-5. Run `pip install -r requirements.txt` (in case dependencies changed)
+**Windows:**
+- Reinstall Python
+- Check "Add to PATH" during installation
 
-{% hint style="info" %}
-**Backup:** Always backup your configuration before updating!
-{% endhint %}
+**Linux/Mac:**
+```bash
+sudo apt install python3  # Ubuntu
+brew install python@3.10  # macOS
+```
+
+### "Permission denied"
+
+**Linux/Mac:**
+```bash
+chmod +x app.py
+sudo chown -R $USER:$USER .
+```
+
+### "Port 5000 already in use"
+
+Change port in `.env`:
+```
+WEB_PORT=5001
+```
+
+Or kill process using port:
+```bash
+# Linux/Mac
+lsof -ti:5000 | xargs kill -9
+
+# Windows
+netstat -ano | findstr :5000
+taskkill /PID <PID> /F
+```
+
+### "Module not found"
+
+Reinstall dependencies:
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt --force-reinstall
+```
+
+### "Database locked"
+
+Stop all instances:
+```bash
+# Linux/Mac
+pkill -f app.py
+
+# Windows
+taskkill /IM python.exe /F
+```
+
+Delete lock file:
+```bash
+rm /tmp/osmand_gps_emulator.lock
+```
+
+### Dependencies Installation Fails
+
+Try with `--user` flag:
+```bash
+pip install --user -r requirements.txt
+```
+
+Or create virtual environment:
+```bash
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate     # Windows
+pip install -r requirements.txt
+```
 
 ---
 
 ## Uninstallation
 
-### Remove the Emulator
+### Windows
 
-**Windows/macOS/Linux:**
+1. Stop application (Ctrl+C in command prompt)
+2. Delete installation folder
+3. Delete virtual environment (if created)
+
+### Linux/Mac
+
 ```bash
-# Stop the emulator (Ctrl+C)
+# Stop service (if installed)
+sudo systemctl stop gps-emulator
+sudo systemctl disable gps-emulator
+sudo rm /etc/systemd/system/gps-emulator.service
 
-# Remove virtual environment (if used)
-rm -rf venv
-
-# Remove application files
+# Remove files
 cd ..
-rm -rf Universal-GPS-Tracker-Emulator-v2.0
+rm -rf universal-gps-emulator
+
+# Remove virtual environment
+rm -rf venv
 ```
 
-**Docker:**
+### Docker
+
 ```bash
 docker stop gps-emulator
 docker rm gps-emulator
-docker rmi gps-emulator:latest
+docker rmi gps-emulator
 ```
 
 ---
 
 ## Next Steps
 
-{% content-ref url="quick-start.md" %}
-[quick-start.md](quick-start.md)
-{% endcontent-ref %}
+1. Read [CONFIGURATION.md](CONFIGURATION.md) for customization
+2. Check [API_REFERENCE.md](API_REFERENCE.md) for API usage
+3. See [PROTOCOLS.md](PROTOCOLS.md) for protocol list
+4. Review [FAQ.md](FAQ.md) for common questions
 
-{% content-ref url="../user-guide/configuration.md" %}
-[configuration.md](../user-guide/configuration.md)
-{% endcontent-ref %}
+---
+
+## Need Help?
+
+- Check [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
+- Read [FAQ.md](FAQ.md)
+- Email: support@your-domain.com
+- Response time: 24-48 hours
+
+---
+
+*Installation guide updated: October 2025*
