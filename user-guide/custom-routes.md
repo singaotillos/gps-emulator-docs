@@ -22,6 +22,18 @@ The GPS Emulator includes **5 predefined routes**, but you can also create **cus
 
 The emulator includes 5 built-in city routes:
 
+![Predefined Routes Map](/.gitbook/assets/screenshots/predefined-routes-map.png)
+
+{% hint style="info" %}
+**📸 IMAGE À CAPTURER:**
+- Screenshot montrant les 5 routes prédéfinies sur une carte mondiale
+- Marqueurs sur: Paris, London, Berlin, Tokyo, New York
+- Petits aperçus du tracé de chaque route (zoom insets)
+- Légende montrant les routes avec distances
+- Utiliser Leaflet map ou screenshot de la map view
+- Résolution: 1920x1080
+{% endhint %}
+
 | Route ID | City | Country | Distance | Points | Description |
 |----------|------|---------|----------|--------|-------------|
 | `paris` | Paris | France | 12.5 km | 4 | Central Paris tour |
@@ -60,6 +72,23 @@ curl -X POST http://localhost:5000/api/multidevice/devices \
 ---
 
 ## Creating Custom Routes
+
+![Custom Route Creation Process](/.gitbook/assets/diagrams/custom-route-creation-process.svg)
+
+{% hint style="info" %}
+**📸 DIAGRAMME À CRÉER:**
+- Flow diagram du process de création de route:
+  1. Get coordinates (Google Maps, OpenStreetMap)
+  2. Define waypoints (lat, lng, speed, altitude)
+  3. Create JSON payload
+  4. Send to API (POST /api/device/{id}/route)
+  5. Verify route (GET /api/device/{id}/route)
+  6. Start device
+- Flèches montrant le flux
+- Icons pour chaque étape
+- Style: Process flow diagram
+- Format: SVG
+{% endhint %}
 
 ### Method 1: API (Recommended)
 
@@ -226,6 +255,18 @@ print(f"Device started: {response.json()['message']}")
 
 **Method 1: Google Maps**
 
+![Getting Coordinates from Google Maps](/.gitbook/assets/screenshots/google-maps-coordinates.png)
+
+{% hint style="info" %}
+**📸 IMAGE À CAPTURER:**
+- Screenshot Google Maps
+- Right-click menu ouvert montrant coordinates
+- Coordonnées surlignées (48.8566, 2.3522)
+- Flèche rouge montrant "Copy" sur coordinates
+- Annotation: "Right-click to get coordinates"
+- Résolution: 1920x1080
+{% endhint %}
+
 1. Go to [Google Maps](https://maps.google.com)
 2. Right-click on location
 3. Click first number (coordinates)
@@ -266,6 +307,40 @@ Online tools:
 ---
 
 ## Route Examples
+
+![Custom Route Visualization](/.gitbook/assets/screenshots/custom-route-visualization.png)
+
+{% hint style="info" %}
+**📸 IMAGE À CAPTURER:**
+- Screenshot map view montrant une custom route
+- Route avec 4-5 waypoints visibles (marqueurs numérotés: 1, 2, 3, 4)
+- Ligne reliant les waypoints
+- Flèches montrant direction de déplacement
+- Sidebar montrant route details:
+  - Total distance
+  - Number of points
+  - Speed at each point
+- Annotation: "Custom route with waypoints"
+- Résolution: 1920x1080
+{% endhint %}
+
+![Create Custom Route Workflow](/.gitbook/assets/gifs/create-custom-route-workflow.gif)
+
+{% hint style="info" %}
+**📸 GIF ANIMÉ À CRÉER:**
+- Animation 20-25 secondes montrant:
+  1. Open Google Maps
+  2. Right-click multiple locations to get coordinates
+  3. Copy coordinates
+  4. Paste into JSON file or API request
+  5. Send API request
+  6. Route appears on emulator map
+  7. Start device
+  8. Device follows custom route
+- Montrer le process complet
+- Format: GIF optimisé < 6MB
+- FPS: 12-15
+{% endhint %}
 
 ### Example 1: Simple Loop
 

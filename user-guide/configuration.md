@@ -52,6 +52,21 @@ Complete configuration reference for customizing your GPS emulator installation.
 
 The emulator uses two configuration files:
 
+![Configuration Files Structure](/.gitbook/assets/diagrams/configuration-files-structure.svg)
+
+{% hint style="info" %}
+**📸 DIAGRAMME À CRÉER:**
+- Diagramme montrant la hiérarchie:
+  - config.yaml (Configuration principale)
+  - .env (Variables d'environnement)
+  - Flèche montrant: .env overrides config.yaml
+- Boxes montrant sections principales:
+  - web_interface, api, traccar, simulation, servers, monitoring, logging
+- Priority indicator: .env > config.yaml
+- Style: Configuration hierarchy diagram
+- Format: SVG
+{% endhint %}
+
 ### 1. config.yaml (Main Configuration)
 
 **Location:** `config.yaml` in project root
@@ -61,6 +76,22 @@ The emulator uses two configuration files:
 **Format:** YAML
 
 **Auto-generated:** Yes, created on first run with defaults
+
+![Config YAML Example](/.gitbook/assets/screenshots/config-yaml-example.png)
+
+{% hint style="info" %}
+**📸 IMAGE À CAPTURER:**
+- Screenshot fichier config.yaml ouvert dans éditeur (VS Code recommended)
+- Montrer structure complète avec sections:
+  - web_interface
+  - api
+  - traccar
+  - simulation
+  - servers
+- Syntax highlighting actif (YAML colors)
+- Line numbers visibles
+- Résolution: 1920x1080
+{% endhint %}
 
 **Example:**
 ```yaml
@@ -84,6 +115,21 @@ api:
 **Format:** KEY=VALUE pairs
 
 **Auto-generated:** No, you must create from template
+
+![ENV File Example](/.gitbook/assets/screenshots/env-file-example.png)
+
+{% hint style="info" %}
+**📸 IMAGE À CAPTURER:**
+- Screenshot fichier .env ouvert dans éditeur
+- Montrer exemples de variables:
+  - WEB_PORT=5000
+  - TRACCAR_HOST=localhost
+  - API_KEY=********** (masqué pour sécurité)
+  - TRACCAR_PASSWORD=********** (masqué)
+- Warning banner rouge: "Never commit .env to version control!"
+- Annotation: "Environment-specific configuration"
+- Résolution: 1280x720
+{% endhint %}
 
 **Example:**
 ```bash
