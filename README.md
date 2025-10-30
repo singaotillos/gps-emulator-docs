@@ -5,6 +5,18 @@
 ![License](https://img.shields.io/badge/license-Envato-blue.svg)
 ![Protocols](https://img.shields.io/badge/protocols-86%2B-success.svg)
 
+## 🎯 Professional GPS Protocol Simulation Without Hardware
+
+![GPS Tracker Emulator Dashboard](/.gitbook/assets/screenshots/preview.png)
+
+**Simulate 86+ GPS protocols** - Perfect for developers, QA teams, and system integrators. Test GPS tracking applications without buying expensive hardware devices.
+
+{% hint style="success" %}
+**Save Thousands in Hardware Costs** - One GPS device = $50-200. You'd need 86 devices = $4,300-17,200. This emulator = $49-79. ROI: 99% savings!
+{% endhint %}
+
+---
+
 ## License
 - Licensing is handled by Envato (Regular/Extended). See the Envato item page for terms.
 
@@ -37,6 +49,37 @@ See CHANGELOG.md for detailed history.
 - Low CPU usage per device (<1%)
 - Memory efficient (~20MB per device)
 - Fast startup time (<5 seconds)
+
+---
+
+## 📸 See It In Action
+
+<table data-view="cards">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>🎛️ Multi-Device Dashboard</strong></td>
+      <td>Manage multiple GPS devices simultaneously with an intuitive, modern interface</td>
+      <td><img src="/.gitbook/assets/screenshots/screen1.jpg" alt="Dashboard"></td>
+    </tr>
+    <tr>
+      <td><strong>📋 Device Management</strong></td>
+      <td>Create, configure, and control simulated GPS trackers with ease</td>
+      <td><img src="/.gitbook/assets/screenshots/screen2.jpg" alt="Device Management"></td>
+    </tr>
+    <tr>
+      <td><strong>🗺️ Real-time Map Visualization</strong></td>
+      <td>Track device positions on interactive maps with live updates</td>
+      <td><img src="/.gitbook/assets/screenshots/screen3.jpg" alt="Map View"></td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 

@@ -37,6 +37,10 @@ python app.py
 # http://localhost:5000
 ```
 
+{% hint style="success" %}
+**Installation takes less than 5 minutes!** Python 3.8+ is the only requirement.
+{% endhint %}
+
 Done! Continue to [Post-Installation](#post-installation) for configuration.
 
 ---
@@ -97,6 +101,12 @@ Done! Continue to [Post-Installation](#post-installation) for configuration.
    - Open browser
    - Go to: http://localhost:5000
    - You should see the dashboard!
+
+{% hint style="info" %}
+**First Launch** - The dashboard should appear like this:
+{% endhint %}
+
+![Dashboard First View](/.gitbook/assets/screenshots/screen1.jpg)
 
 #### Create Desktop Shortcut (Optional)
 

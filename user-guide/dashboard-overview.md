@@ -2,6 +2,8 @@
 
 Complete guide to the web dashboard interface.
 
+![Dashboard Main View](/.gitbook/assets/screenshots/screen1.jpg)
+
 ---
 
 ## Interface Layout
@@ -21,14 +23,19 @@ The dashboard provides a modern, responsive interface for managing GPS devices.
    - Real-time updates
    - Quick actions (Start/Stop/Delete)
 
+![Device List View](/.gitbook/assets/screenshots/screen2.jpg)
+
 3. **Device Details Panel**
    - Current position
    - Speed, fuel, battery
    - Statistics
 
-4. **Map View** (coming soon)
+4. **Map View**
    - Real-time device positions
    - Route visualization
+   - Interactive controls
+
+![Map Visualization](/.gitbook/assets/screenshots/screen3.jpg)
 
 ---
 

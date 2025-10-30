@@ -24,6 +24,8 @@ http://localhost:5000
 
 You should see the **Universal GPS Tracker Emulator** dashboard.
 
+![Dashboard Overview](/.gitbook/assets/screenshots/screen1.jpg)
+
 {% hint style="success" %}
 **Tip:** Bookmark this URL for quick access!
 {% endhint %}
@@ -39,6 +41,8 @@ You should see the **Universal GPS Tracker Emulator** dashboard.
 3. **Select** a device model (e.g., `TK103-2B`)
 4. **Choose** a route (e.g., `Paris`)
 5. **Click** the green "+ Add" button
+
+![Device Creation Interface](/.gitbook/assets/screenshots/screen2.jpg)
 
 {% hint style="info" %}
 The Device ID is auto-generated if you leave it empty.
@@ -91,7 +95,19 @@ curl -X POST http://localhost:5000/api/multidevice/devices/dev_tk103_001/start
 
 ---
 
-## Step 4: View in Traccar (Optional)
+## Step 4: View Real-time Map
+
+Navigate to the Map view to see your devices in action:
+
+![Real-time Map Visualization](/.gitbook/assets/screenshots/screen3.jpg)
+
+{% hint style="success" %}
+**Live Tracking!** Devices update their positions automatically every few seconds.
+{% endhint %}
+
+---
+
+## Step 5: View in Traccar (Optional)
 
 If you have Traccar running:
 
@@ -105,7 +121,7 @@ If you have Traccar running:
 
 ---
 
-## Step 5: Monitor Real-time Data
+## Step 6: Monitor Real-time Data
 
 Back in the emulator dashboard, you can see:
 
