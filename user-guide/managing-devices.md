@@ -9,7 +9,7 @@ Complete guide to device management operations.
 ![Device List with Start Button](/.gitbook/assets/screenshots/device-list-start-button.png)
 
 **Via Web Interface:**
-1. Find device in list
+1. Find device in dropdown **"By Protocol"** or **"By Device"**
 2. Click "Start" button
 3. Device begins sending data
 
@@ -40,11 +40,9 @@ curl -X POST http://localhost:5000/api/multidevice/devices/DEVICE_ID/stop
 
 ![Device Edit Configuration Dialog](/.gitbook/assets/screenshots/device-edit-config-dialog.png)
 
-1. Stop device first
-2. Click "Edit" button
-3. Modify settings
-4. Save changes
-5. Restart device
+1. Click "Edit" button (device can be running or stopped)
+2. Modify **Device configuration** settings
+3. Save changes
 
 ---
 
@@ -52,14 +50,9 @@ curl -X POST http://localhost:5000/api/multidevice/devices/DEVICE_ID/stop
 
 ![Device Delete Confirmation](/.gitbook/assets/screenshots/device-delete-confirmation.png)
 
-{% hint style="warning" %}
-Device must be stopped before deletion
-{% endhint %}
-
 **Steps:**
-1. Stop device
-2. Click "Delete" button
-3. Confirm deletion
+1. Click "Delete" button
+2. Confirm deletion
 
 ---
 
@@ -69,21 +62,16 @@ Device must be stopped before deletion
 
 {% hint style="info" %}
 **📸 IMAGE À CAPTURER:**
-- Liste de devices avec checkboxes cochées (3-4 devices sélectionnés)
-- Boutons "Start Selected" et "Stop Selected" visibles en haut
-- Compteur montrant "3 selected" ou similaire
-- Ajouter flèches vers les checkboxes et boutons d'action
-- Annotation: "Select multiple devices for bulk operations"
+- Dashboard montrant le champ "Count device to add"
+- Interface pour ajouter plusieurs devices en masse
+- Montrer le formulaire de création en masse
 - Résolution: 1920x1080
 {% endhint %}
 
-**Start multiple devices:**
-- Select devices (checkboxes)
-- Click "Start Selected"
-
-**Stop multiple devices:**
-- Select devices
-- Click "Stop Selected"
+**Add multiple devices:**
+- Use **"Count device to add"** field
+- Configure device settings
+- Create devices in batch
 
 ---
 
