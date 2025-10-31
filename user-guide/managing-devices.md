@@ -8,16 +8,6 @@ Complete guide to device management operations.
 
 ![Device List with Start Button](/.gitbook/assets/screenshots/device-list-start-button.png)
 
-{% hint style="info" %}
-**📸 IMAGE À CAPTURER:**
-- Dashboard montrant la liste des devices
-- Device avec statut "stopped" visible
-- Bouton vert "Start" (▶️) bien visible
-- Ajouter flèche rouge pointant vers le bouton Start
-- Ajouter annotation: "Click to start device"
-- Résolution: 1920x1080
-{% endhint %}
-
 **Via Web Interface:**
 1. Find device in list
 2. Click "Start" button
@@ -33,16 +23,6 @@ curl -X POST http://localhost:5000/api/multidevice/devices/DEVICE_ID/start
 ## Stopping Devices
 
 ![Device Running with Stop Button](/.gitbook/assets/screenshots/device-running-stop-button.png)
-
-{% hint style="info" %}
-**📸 IMAGE À CAPTURER:**
-- Dashboard montrant device avec statut "running"
-- Bouton jaune/orange "Stop" (⏸️) visible
-- Indicateur "active" ou "1 active" affiché
-- Ajouter flèche rouge vers bouton Stop
-- Annotation: "Stop device simulation"
-- Résolution: 1920x1080
-{% endhint %}
 
 **Via Web Interface:**
 1. Find running device
@@ -60,16 +40,6 @@ curl -X POST http://localhost:5000/api/multidevice/devices/DEVICE_ID/stop
 
 ![Device Edit Configuration Dialog](/.gitbook/assets/screenshots/device-edit-config-dialog.png)
 
-{% hint style="info" %}
-**📸 IMAGE À CAPTURER:**
-- Modal/dialog de configuration device ouvert
-- Champs editables: speed, update_interval, description
-- Boutons "Save" et "Cancel" visibles
-- Montrer device stoppé avant édition
-- Ajouter annotation: "Configure device settings"
-- Résolution: 1920x1080
-{% endhint %}
-
 1. Stop device first
 2. Click "Edit" button
 3. Modify settings
@@ -81,16 +51,6 @@ curl -X POST http://localhost:5000/api/multidevice/devices/DEVICE_ID/stop
 ## Deleting Devices
 
 ![Device Delete Confirmation](/.gitbook/assets/screenshots/device-delete-confirmation.png)
-
-{% hint style="info" %}
-**📸 IMAGE À CAPTURER:**
-- Modal de confirmation de suppression
-- Message: "Are you sure you want to delete this device?"
-- Boutons "Delete" (rouge) et "Cancel"
-- Device ID visible dans le message
-- Ajouter annotation: "Confirm deletion"
-- Résolution: 1280x720
-{% endhint %}
 
 {% hint style="warning" %}
 Device must be stopped before deletion
