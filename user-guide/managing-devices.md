@@ -10,7 +10,7 @@ Complete guide to device management operations.
 
 **Via Web Interface:**
 1. Locate your device in the **Active Protocols** section
-2. Click the green **Play icon** (▶️) button on the device card
+2. Click the green **Play icon**  button on the device card
 3. Device status changes to "active" and begins sending data
 
 **Via API:**
@@ -26,7 +26,7 @@ curl -X POST http://localhost:5000/api/multidevice/devices/DEVICE_ID/start
 
 **Via Web Interface:**
 1. Locate the running device (green indicator shows "active")
-2. Click the blue **Stop icon** (⏸️) button on the device card
+2. Click the blue **Stop icon**  button on the device card
 3. Device status changes to "stopped" and stops sending data
 
 **Via API:**
@@ -41,7 +41,7 @@ curl -X POST http://localhost:5000/api/multidevice/devices/DEVICE_ID/stop
 ![Device Edit Configuration Dialog](/.gitbook/assets/screenshots/device-edit-config-dialog.png)
 
 **Steps:**
-1. Click the blue **Settings icon** (⚙️) on the device card
+1. Click the blue **Settings icon**  on the device card
 2. A modal dialog "Device Configuration" opens
 3. Modify settings:
    - **Route**: Select from dropdown (Paris, London, etc.)
@@ -59,7 +59,7 @@ You can configure a device while it's running or stopped.
 ![Device Delete Confirmation](/.gitbook/assets/screenshots/device-delete-confirmation.png)
 
 **Steps:**
-1. Click the red **Delete icon** (🗑️) on the device card
+1. Click the red **Delete icon**  on the device card
 2. A confirmation dialog appears
 3. Confirm deletion by clicking the delete button
 
