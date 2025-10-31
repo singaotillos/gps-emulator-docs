@@ -20,11 +20,11 @@
 ## License
 - Licensing is handled by Envato (Regular/Extended). See the Envato item page for terms.
 
-##  Changelog
+## Changelog
 
 ### Version 2.0.0 (Current)
 - 86 GPS protocols supported
-- Modern web interface
+- Modern web interface with dashboard
 - REST API with Swagger docs
 - Multi-device simulation
 - Real-time monitoring
