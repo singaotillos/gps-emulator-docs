@@ -4,20 +4,6 @@ Complete guide to device management operations.
 
 ---
 
-## Device Action Icons
-
-Each device card has three action icons:
-
-| Icon | Color | Action | Description |
-|------|-------|--------|-------------|
-| ▶️ | Green | **Start/Stop** | Start device simulation (changes when device is running) |
-| ⚙️ | Blue | **Configure** | Open device configuration dialog |
-| 🗑️ | Red | **Delete** | Delete device (with confirmation) |
-
-![Action Icons](/.gitbook/assets/screenshots/device-action-icons.png)
-
----
-
 ## Starting Devices
 
 ![Device List with Start Button](/.gitbook/assets/screenshots/device-list-start-button.png)
@@ -40,12 +26,8 @@ curl -X POST http://localhost:5000/api/multidevice/devices/DEVICE_ID/start
 
 **Via Web Interface:**
 1. Locate the running device (green indicator shows "active")
-2. Click the green **Play/Stop icon** on the device card (same icon as Start)
+2. Click the blue **Stop icon** (⏸️) button on the device card
 3. Device status changes to "stopped" and stops sending data
-
-{% hint style="info" %}
-The same green icon is used for both Start and Stop. When a device is running, clicking it stops the device.
-{% endhint %}
 
 **Via API:**
 ```bash
