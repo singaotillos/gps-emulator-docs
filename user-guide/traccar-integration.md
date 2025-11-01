@@ -91,17 +91,27 @@ The Traccar configuration is managed through the **web interface** or via the co
 
 {% tabs %}
 {% tab title="Via Web Interface (Recommended)" %}
-1. Start the GPS Emulator application
-2. Open http://localhost:5000
-3. Go to **Settings** or **Traccar Configuration**
-4. Enter your Traccar credentials:
-   - Server: `localhost:8082`
-   - Username: `admin` (or your Traccar username)
-   - Password: `admin` (or your Traccar password)
-5. Enable **Auto Sync**
-6. Click **Save**
+1. Start the GPS Emulator application:
+   ```bash
+   python app.py
+   ```
 
-The configuration will be saved in `config/traccar_config.json`
+2. Open http://localhost:5000 in your browser
+
+3. Click the **Traccar** button (top right):
+   ```
+   🔧 Traccar
+   ```
+
+4. In the Traccar Configuration dialog, enter:
+   - **Server**: `localhost:8082`
+   - **Username**: Your Traccar username (e.g., `admin` or your email)
+   - **Password**: Your Traccar password
+   - **Enable Auto Sync**: ✓ (checked)
+
+5. Click **Save**
+
+The configuration is automatically saved to `config/traccar_config.json`
 {% endtab %}
 
 {% tab title="Via Configuration File" %}
