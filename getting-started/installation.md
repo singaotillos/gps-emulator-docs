@@ -142,17 +142,6 @@ Done! Continue to [Post-Installation](#post-installation) for configuration.
 
 ![Dashboard First View](/.gitbook/assets/screenshots/first_launch.png)
 
-#### Create Desktop Shortcut (Optional)
-
-Create file `start-emulator.bat`:
-```batch
-@echo off
-cd C:\path\to\universal-gps-emulator
-python app.py
-pause
-```
-
----
 
 ### Linux Installation
 
