@@ -36,7 +36,7 @@ Complete Tutorial: Creating and Managing GPS Devices
 ### Multi-Device Management
 
 <!-- PLACEHOLDER: Screenshot - Multi-device dashboard with 5+ active devices -->
-![Multi-Device Management](/.gitbook/assets/screenshots/see_It_In_action_multi_devices.png)
+![Multi-Device Management](/.gitbook/assets/see_It_In_action_multi_devices_management.png)
 
 **Manage multiple devices simultaneously:**
 - Create up to 100+ devices
@@ -114,7 +114,7 @@ Full protocol list: [View All 86 Protocols](protocols/all-protocols.md)
 <!-- PLACEHOLDER: Animated GIF showing device creation process -->
 <!-- TODO: Create GIF using ScreenToGif (see HOW_TO_CREATE_API_GIF.md) -->
 <!-- TEMPORARY PLACEHOLDER: Using static screenshot -->
-![Device Creation](/.gitbook/assets/screenshots/device-list-start-button.png)
+![Device Creation](/.gitbook/assets/screenshots/see_It_In_action_multi_devices_simulation.png)
 
 **Simulate multiple devices:**
 - Up to 100+ concurrent devices
