@@ -43,18 +43,8 @@ Complete video tutorial: Creating your first GPS device with descriptions and ta
 1. **Click** on the "By Protocol" tab
 2. **Select** a protocol from the dropdown (e.g., `TK103`)
 3. **Select** a device model (e.g., `TK103-2B`)
-4. **Enter** a description (optional) - e.g., "Delivery Van #1"
-5. **Add** tags (optional) - e.g., "fleet", "delivery", "paris"
-6. **Choose** a route (e.g., `Paris`)
-7. **Click** the green "+ Add" button
-
-{% hint style="info" %}
-**Auto-Generated IDs**: The Device ID is auto-generated if you leave it empty.
-{% endhint %}
-
-{% hint style="success" %}
-**Organization Tips**: Watch the video above to see how to use descriptions and tags to organize your devices effectively!
-{% endhint %}
+4. **Choose** a route (e.g., `Paris`)
+5. **Click** the green "+ Add" button
 
 ### Method 2: Using the API
 
