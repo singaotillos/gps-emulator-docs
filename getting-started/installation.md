@@ -120,9 +120,10 @@ Done! Continue to [Post-Installation](#post-installation) for configuration.
    - Web server port (default: 5000)
    - API settings
    - Logging preferences
+   - **Traccar credentials** (or configure later via web interface)
 
    {% hint style="info" %}
-   **Note**: Traccar integration is **NOT** configured in .env file. Configure Traccar later via the web interface (Traccar button).
+   **Traccar Configuration**: You can configure Traccar credentials in the `.env` file now, or later via the web interface (Traccar button). Both methods save to the same `.env` file.
    {% endhint %}
 
 4. **Start Application**

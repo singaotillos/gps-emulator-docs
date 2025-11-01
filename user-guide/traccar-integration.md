@@ -87,7 +87,7 @@ Password: admin
 
 ### Step 1: Configure Traccar Credentials
 
-The Traccar configuration is managed through the **web interface** or via the configuration file `config/traccar_config.json`.
+The Traccar configuration is managed through the **web interface** and stored in the `.env` file.
 
 {% tabs %}
 {% tab title="Via Web Interface (Recommended)" %}
@@ -100,39 +100,38 @@ The Traccar configuration is managed through the **web interface** or via the co
 
 3. Click the **Traccar** button (top right):
    ```
-   🔧 Traccar
+   Traccar
    ```
 
 4. In the Traccar Configuration dialog, enter:
    - **Server**: `localhost:8082`
    - **Username**: Your Traccar username (e.g., `admin` or your email)
    - **Password**: Your Traccar password
-   - **Enable Auto Sync**: ✓ (checked)
+   - **Enable Auto Sync**: checked
 
 5. Click **Save**
 
-The configuration is automatically saved to `config/traccar_config.json`
+The configuration is automatically saved to the `.env` file.
 {% endtab %}
 
-{% tab title="Via Configuration File" %}
-Manually edit `config/traccar_config.json`:
+{% tab title="Via .env File" %}
+Manually edit `.env` file in the project root:
 
-```json
-{
-    "server": "localhost:8082",
-    "username": "admin",
-    "password": "your_password",
-    "auto_sync_enabled": true,
-    "last_updated": "2025-11-01T10:00:00"
-}
+```bash
+# Traccar Server Configuration
+TRACCAR_HOST=localhost
+TRACCAR_PORT=8082
+TRACCAR_USERNAME=admin
+TRACCAR_PASSWORD=your_password
+TRACCAR_AUTO_CREATE_DEVICES=true
 ```
 
 Then restart the application.
 {% endtab %}
 {% endtabs %}
 
-{% hint style="warning" %}
-**Note**: Traccar credentials are stored in `config/traccar_config.json`, **not** in `.env` file!
+{% hint style="info" %}
+**Note**: Traccar credentials are stored in the `.env` file. This file is not committed to version control for security.
 {% endhint %}
 
 ### Step 2: Restart Emulator

@@ -274,23 +274,37 @@ curl -H "Authorization: Bearer your-api-key" \
 
 ### Traccar Integration
 
-Traccar integration is configured entirely through the **web interface**, not via config files or environment variables.
+Traccar integration is configured via environment variables in the `.env` file.
 
-{% hint style="warning" %}
-**Important**: Traccar credentials are configured via the **web interface** (Traccar button), not via environment variables or config.yaml. The credentials are stored in `config/traccar_config.json`.
+{% hint style="info" %}
+**Configuration Method**: Use the **web interface** Traccar button to configure credentials. The settings are automatically saved to your `.env` file.
 {% endhint %}
 
-**How to configure Traccar:**
+**Environment Variables:**
+
+```bash
+# Traccar Server Configuration
+TRACCAR_HOST=localhost           # Traccar server hostname
+TRACCAR_PORT=8082                # Traccar server port
+TRACCAR_USERNAME=admin           # Traccar username
+TRACCAR_PASSWORD=your_password   # Traccar password
+
+# Traccar Device Settings
+TRACCAR_AUTO_CREATE_DEVICES=true  # Auto-create devices in Traccar
+TRACCAR_DEVICE_PREFIX=EMU_        # Device name prefix
+```
+
+**How to configure via Web Interface:**
 1. Start the application: `python app.py`
 2. Open http://localhost:5000
 3. Click the **Traccar** button (top right)
 4. Enter your Traccar server, username, and password
 5. Enable Auto Sync if desired
-6. Click Save
+6. Click Save (saves to `.env` file)
 
-**auto_create_devices:**
-- When enabled via the web interface, emulator devices are automatically added to Traccar
-- Device names include the prefix specified in the Traccar configuration
+**TRACCAR_AUTO_CREATE_DEVICES:**
+- When `true`, emulator devices are automatically added to Traccar
+- Device names include the prefix specified by `TRACCAR_DEVICE_PREFIX`
 - Example: `EMU_TK103_001`, `EMU_GT06_002`, etc.
 
 **Example of automatic sync:**
