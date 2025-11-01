@@ -85,19 +85,45 @@ Password: admin
 - Couleurs: Bleu/Vert pour flux de données
 {% endhint %}
 
-### Step 1: Configure Emulator
+### Step 1: Configure Traccar Credentials
 
-Edit your `.env` file:
+The Traccar configuration is managed through the **web interface** or via the configuration file `config/traccar_config.json`.
 
-```bash
-# Traccar Configuration
-TRACCAR_HOST=localhost
-TRACCAR_PORT=8082
-TRACCAR_USERNAME=admin
-TRACCAR_PASSWORD=admin
-TRACCAR_AUTO_CREATE_DEVICES=true
-TRACCAR_DEVICE_PREFIX=EMU_
+{% tabs %}
+{% tab title="Via Web Interface (Recommended)" %}
+1. Start the GPS Emulator application
+2. Open http://localhost:5000
+3. Go to **Settings** or **Traccar Configuration**
+4. Enter your Traccar credentials:
+   - Server: `localhost:8082`
+   - Username: `admin` (or your Traccar username)
+   - Password: `admin` (or your Traccar password)
+5. Enable **Auto Sync**
+6. Click **Save**
+
+The configuration will be saved in `config/traccar_config.json`
+{% endtab %}
+
+{% tab title="Via Configuration File" %}
+Manually edit `config/traccar_config.json`:
+
+```json
+{
+    "server": "localhost:8082",
+    "username": "admin",
+    "password": "your_password",
+    "auto_sync_enabled": true,
+    "last_updated": "2025-11-01T10:00:00"
+}
 ```
+
+Then restart the application.
+{% endtab %}
+{% endtabs %}
+
+{% hint style="warning" %}
+**Note**: Traccar credentials are stored in `config/traccar_config.json`, **not** in `.env` file!
+{% endhint %}
 
 ### Step 2: Restart Emulator
 
