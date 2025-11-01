@@ -35,7 +35,7 @@ You should see the **Universal GPS Tracker Emulator** dashboard.
 ## Step 2: Create Your First Device
 
 {% embed url="https://www.youtube.com/watch?v=W-Q916RGzB4" %}
-Complete video tutorial: Creating your first GPS device with descriptions and tags
+Complete video tutorial: Creating your first GPS device
 {% endembed %}
 
 ### Method 1: Using the Web Interface
