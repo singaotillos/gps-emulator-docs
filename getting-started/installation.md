@@ -140,7 +140,7 @@ Done! Continue to [Post-Installation](#post-installation) for configuration.
 **First Launch** - The dashboard should appear like this:
 {% endhint %}
 
-![Dashboard First View](/.gitbook/assets/screenshots/screen1.jpg)
+![Dashboard First View](/.gitbook/assets/screenshots/first_launch.png)
 
 #### Create Desktop Shortcut (Optional)
 
