@@ -108,11 +108,22 @@ Done! Continue to [Post-Installation](#post-installation) for configuration.
    ```
 
 3. **Configure Application (Optional)**
+
+   The `.env` file is **optional** for basic usage. You can start the application without it.
+
    ```cmd
    copy .env.example .env
    notepad .env
    ```
-   Edit configuration as needed (see CONFIGURATION.md)
+
+   **What to configure in .env:**
+   - Web server port (default: 5000)
+   - API settings
+   - Logging preferences
+
+   {% hint style="info" %}
+   **Note**: Traccar integration is **NOT** configured in .env file. Configure Traccar later via the web interface (Traccar button).
+   {% endhint %}
 
 4. **Start Application**
    ```cmd
@@ -255,11 +266,18 @@ sudo systemctl status gps-emulator
    pip install -r requirements.txt
    ```
 
-3. **Configure**
+3. **Configure (Optional)**
+
+   The `.env` file is optional for basic usage.
+
    ```bash
    cp .env.example .env
    nano .env
    ```
+
+   {% hint style="info" %}
+   **Note**: Traccar is configured via the web interface, not in .env
+   {% endhint %}
 
 4. **Start Application**
    ```bash
@@ -341,17 +359,34 @@ You should see the dashboard with:
 3. Status should change to "Running"
 4. Device is now sending GPS data!
 
-### 4. Test with Traccar (Optional)
+### 4. Configure Traccar Integration (Optional)
 
-If you have Traccar installed:
+If you want to use Traccar for GPS tracking:
 
-1. Create device in Traccar:
-   - Protocol: **tk103**
-   - Unique ID: Copy from emulator
-   - Port: **5002**
+**Step 1: Ensure Traccar is Running**
+- Open http://localhost:8082
+- You should see Traccar login page
 
-2. Start emulator device
-3. Check Traccar - positions should appear!
+**Step 2: Configure in Emulator**
+1. In the GPS Emulator web interface (http://localhost:5000)
+2. Click the **🔧 Traccar** button (top right corner)
+3. Enter your Traccar credentials:
+   - **Server**: `localhost:8082`
+   - **Username**: Your Traccar username (e.g., `admin`)
+   - **Password**: Your Traccar password
+4. Enable **Auto Sync** ✓
+5. Click **Save**
+
+**Step 3: Test**
+1. Create a device in the emulator
+2. Start the device
+3. Open Traccar - the device should appear automatically!
+
+{% hint style="success" %}
+**Auto-sync enabled**: Devices created in the emulator are automatically added to Traccar!
+{% endhint %}
+
+See [Traccar Integration Guide](../user-guide/traccar-integration.md) for detailed setup.
 
 ---
 
