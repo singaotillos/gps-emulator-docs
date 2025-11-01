@@ -13,12 +13,9 @@
 **Quick Demo**: Watch how easy it is to simulate GPS devices in under 2 minutes!
 {% endhint %}
 
-<!-- PLACEHOLDER: Video Tutorial (2-3 minutes) -->
-{% embed url="https://www.youtube.com/watch?v=YOUR_VIDEO_ID" %}
+{% embed url="https://www.youtube.com/watch?v=_i59hUqqzRk" %}
 Complete Tutorial: Creating and Managing GPS Devices
 {% endembed %}
-
-<!-- TODO: Replace with actual video ID when available -->
 
 ---
 
@@ -44,8 +41,8 @@ Complete Tutorial: Creating and Managing GPS Devices
 **Manage multiple devices simultaneously:**
 - Create up to 100+ devices
 - Start/stop individual devices
-- Monitor CPU and memory usage
 - View real-time position updates
+- Track multiple protocols at once
 
 ---
 
