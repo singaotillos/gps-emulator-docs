@@ -52,21 +52,6 @@ Complete configuration reference for customizing your GPS emulator installation.
 
 The emulator uses two configuration files:
 
-![Configuration Files Structure](/.gitbook/assets/diagrams/configuration-files-structure.svg)
-
-{% hint style="info" %}
-**📸 DIAGRAMME À CRÉER:**
-- Diagramme montrant la hiérarchie:
-  - config.yaml (Configuration principale)
-  - .env (Variables d'environnement)
-  - Flèche montrant: .env overrides config.yaml
-- Boxes montrant sections principales:
-  - web_interface, api, traccar, simulation, servers, monitoring, logging
-- Priority indicator: .env > config.yaml
-- Style: Configuration hierarchy diagram
-- Format: SVG
-{% endhint %}
-
 ### 1. config.yaml (Main Configuration)
 
 **Location:** `config.yaml` in project root
@@ -76,22 +61,6 @@ The emulator uses two configuration files:
 **Format:** YAML
 
 **Auto-generated:** Yes, created on first run with defaults
-
-![Config YAML Example](/.gitbook/assets/screenshots/config-yaml-example.png)
-
-{% hint style="info" %}
-**📸 IMAGE À CAPTURER:**
-- Screenshot fichier config.yaml ouvert dans éditeur (VS Code recommended)
-- Montrer structure complète avec sections:
-  - web_interface
-  - api
-  - traccar
-  - simulation
-  - servers
-- Syntax highlighting actif (YAML colors)
-- Line numbers visibles
-- Résolution: 1920x1080
-{% endhint %}
 
 **Example:**
 ```yaml
@@ -115,21 +84,6 @@ api:
 **Format:** KEY=VALUE pairs
 
 **Auto-generated:** No, you must create from template
-
-![ENV File Example](/.gitbook/assets/screenshots/env-file-example.png)
-
-{% hint style="info" %}
-**📸 IMAGE À CAPTURER:**
-- Screenshot fichier .env ouvert dans éditeur
-- Montrer exemples de variables:
-  - WEB_PORT=5000
-  - TRACCAR_HOST=localhost
-  - API_KEY=********** (masqué pour sécurité)
-  - TRACCAR_PASSWORD=********** (masqué)
-- Warning banner rouge: "Never commit .env to version control!"
-- Annotation: "Environment-specific configuration"
-- Résolution: 1280x720
-{% endhint %}
 
 **Example:**
 ```bash
@@ -274,42 +228,58 @@ curl -H "Authorization: Bearer your-api-key" \
 
 ### Traccar Integration
 
-Traccar integration is configured via environment variables in the `.env` file.
+Settings for automatic Traccar server integration.
 
-{% hint style="info" %}
-**Configuration Method**: Use the **web interface** Traccar button to configure credentials. The settings are automatically saved to your `.env` file.
-{% endhint %}
-
-**Environment Variables:**
-
-```bash
-# Traccar Server Configuration
-TRACCAR_HOST=localhost           # Traccar server hostname
-TRACCAR_PORT=8082                # Traccar server port
-TRACCAR_USERNAME=admin           # Traccar username
-TRACCAR_PASSWORD=your_password   # Traccar password
-
-# Traccar Device Settings
-TRACCAR_AUTO_CREATE_DEVICES=true  # Auto-create devices in Traccar
-TRACCAR_DEVICE_PREFIX=EMU_        # Device name prefix
+#### config.yaml Section:
+```yaml
+traccar:
+  default_host: localhost     # Traccar server host
+  default_port: 8082          # Traccar web interface port
+  username: admin             # Traccar admin username
+  password: admin             # Traccar admin password
+  auto_create_devices: true   # Auto-add devices to Traccar
+  device_prefix: EMU_         # Device name prefix in Traccar
 ```
 
-**How to configure via Web Interface:**
-1. Start the application: `python app.py`
-2. Open http://localhost:5000
-3. Click the **Traccar** button (top right)
-4. Enter your Traccar server, username, and password
-5. Enable Auto Sync if desired
-6. Click Save (saves to `.env` file)
+#### Environment Variables:
+```bash
+TRACCAR_HOST=localhost
+TRACCAR_PORT=8082
+TRACCAR_USERNAME=admin
+TRACCAR_PASSWORD=admin
+TRACCAR_AUTO_CREATE_DEVICES=true
+TRACCAR_DEVICE_PREFIX=EMU_
+```
 
-**TRACCAR_AUTO_CREATE_DEVICES:**
-- When `true`, emulator devices are automatically added to Traccar
-- Device names include the prefix specified by `TRACCAR_DEVICE_PREFIX`
-- Example: `EMU_TK103_001`, `EMU_GT06_002`, etc.
+#### Options Explained:
 
-**Example of automatic sync:**
+**default_host:**
+- IP or hostname of Traccar server
+- Use `localhost` if running locally
+- Use IP/domain if remote: `traccar.example.com`
+
+**default_port:**
+- Traccar web interface port (not protocol port!)
+- Default Traccar port: `8082`
+- Check Traccar's `traccar.xml`
+
+**username/password:**
+- Traccar admin credentials
+- Required for auto-device creation
+- Create dedicated API user recommended
+
+**auto_create_devices:**
+- `true` - Automatically add emulator devices to Traccar
+- `false` - Manual device creation in Traccar
+
+**device_prefix:**
+- Prefix added to device names in Traccar
+- Example: `EMU_` creates devices like "EMU_TK103_001"
+- Helps identify emulator devices
+
+**Example Script:**
 ```python
-# Create device via API
+# Add device to Traccar automatically
 device_data = {
     "protocol": "tk103",
     "device_model": "TK103-2B",
@@ -317,7 +287,7 @@ device_data = {
 }
 response = requests.post("http://localhost:5000/api/multidevice/devices",
                          json=device_data)
-# If Traccar auto-sync is enabled, device automatically appears in Traccar!
+# Device automatically created in Traccar!
 ```
 
 ---

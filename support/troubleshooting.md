@@ -121,7 +121,7 @@ pip install --user -r requirements.txt
 
 ### Module Not Found
 
-**Problem:** `ModuleNotFoundError: No module named 'flask'` or `No module named 'protocol_id_converter'`
+**Problem:** `ModuleNotFoundError: No module named 'flask'`
 
 **Solution:**
 ```bash
@@ -136,28 +136,6 @@ venv\Scripts\activate     # Windows
 # Reinstall requirements
 pip install -r requirements.txt --force-reinstall
 ```
-
-**If error persists** (`protocol_id_converter`, `vehicle_attributes_db`, etc.):
-
-{% hint style="danger" %}
-**Incomplete Installation**: Make sure you extracted ALL files from the archive!
-{% endhint %}
-
-```bash
-# Verify all Python files are present
-ls *.py  # Should see: app.py, api.py, protocol_id_converter.py, vehicle_attributes_db.py, etc.
-
-# If files are missing, re-extract the complete archive
-```
-
-**Required files in root directory:**
-- `app.py` - Main application
-- `api.py` - REST API
-- `protocol_id_converter.py` - Protocol ID converter
-- `vehicle_attributes_db.py` - Vehicle attributes database
-- `config_manager.py` - Configuration manager
-- `license_manager.py` - License manager
-- And others...
 
 ---
 

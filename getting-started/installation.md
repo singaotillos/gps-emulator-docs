@@ -22,31 +22,10 @@ Complete step-by-step installation guide for all platforms.
 
 For experienced users:
 
-{% tabs %}
-{% tab title="Windows" %}
-```cmd
-# 1. Extract files (Right-click > Extract All)
-# Or using PowerShell:
-Expand-Archive -Path Universal-GPS-Tracker-Emulator-v2.0.0.zip -DestinationPath .
-
-# 2. Navigate to folder
-cd Universal-GPS-Tracker-Emulator-v2.0.0
-
-# 3. Install Python dependencies
-pip install -r requirements.txt
-
-# 4. Start application
-python app.py
-
-# 5. Open browser: http://localhost:5000
-```
-{% endtab %}
-
-{% tab title="Linux/macOS" %}
 ```bash
 # 1. Extract files
-unzip Universal-GPS-Tracker-Emulator-v2.0.0.zip
-cd Universal-GPS-Tracker-Emulator-v2.0.0
+unzip universal-gps-emulator.zip
+cd universal-gps-emulator
 
 # 2. Install Python dependencies
 pip install -r requirements.txt
@@ -54,14 +33,9 @@ pip install -r requirements.txt
 # 3. Start application
 python app.py
 
-# 4. Open browser: http://localhost:5000
+# 4. Open browser
+# http://localhost:5000
 ```
-{% endtab %}
-{% endtabs %}
-
-{% hint style="success" %}
-**Installation takes less than 5 minutes!** Python 3.8+ is the only requirement.
-{% endhint %}
 
 Done! Continue to [Post-Installation](#post-installation) for configuration.
 
@@ -108,23 +82,11 @@ Done! Continue to [Post-Installation](#post-installation) for configuration.
    ```
 
 3. **Configure Application (Optional)**
-
-   The `.env` file is **optional** for basic usage. You can start the application without it.
-
    ```cmd
    copy .env.example .env
    notepad .env
    ```
-
-   **What to configure in .env:**
-   - Web server port (default: 5000)
-   - API settings
-   - Logging preferences
-   - **Traccar credentials** (or configure later via web interface)
-
-   {% hint style="info" %}
-   **Traccar Configuration**: You can configure Traccar credentials in the `.env` file now, or later via the web interface (Traccar button). Both methods save to the same `.env` file.
-   {% endhint %}
+   Edit configuration as needed (see CONFIGURATION.md)
 
 4. **Start Application**
    ```cmd
@@ -136,12 +98,17 @@ Done! Continue to [Post-Installation](#post-installation) for configuration.
    - Go to: http://localhost:5000
    - You should see the dashboard!
 
-{% hint style="info" %}
-**First Launch** - The dashboard should appear like this:
-{% endhint %}
+#### Create Desktop Shortcut (Optional)
 
-![Dashboard First View](/.gitbook/assets/screenshots/first_launch.png)
+Create file `start-emulator.bat`:
+```batch
+@echo off
+cd C:\path\to\universal-gps-emulator
+python app.py
+pause
+```
 
+---
 
 ### Linux Installation
 
@@ -256,18 +223,11 @@ sudo systemctl status gps-emulator
    pip install -r requirements.txt
    ```
 
-3. **Configure (Optional)**
-
-   The `.env` file is optional for basic usage.
-
+3. **Configure**
    ```bash
    cp .env.example .env
    nano .env
    ```
-
-   {% hint style="info" %}
-   **Note**: Traccar is configured via the web interface, not in .env
-   {% endhint %}
 
 4. **Start Application**
    ```bash
@@ -349,34 +309,17 @@ You should see the dashboard with:
 3. Status should change to "Running"
 4. Device is now sending GPS data!
 
-### 4. Configure Traccar Integration (Optional)
+### 4. Test with Traccar (Optional)
 
-If you want to use Traccar for GPS tracking:
+If you have Traccar installed:
 
-**Step 1: Ensure Traccar is Running**
-- Open http://localhost:8082
-- You should see Traccar login page
+1. Create device in Traccar:
+   - Protocol: **tk103**
+   - Unique ID: Copy from emulator
+   - Port: **5002**
 
-**Step 2: Configure in Emulator**
-1. In the GPS Emulator web interface (http://localhost:5000)
-2. Click the **🔧 Traccar** button (top right corner)
-3. Enter your Traccar credentials:
-   - **Server**: `localhost:8082`
-   - **Username**: Your Traccar username (e.g., `admin`)
-   - **Password**: Your Traccar password
-4. Enable **Auto Sync** ✓
-5. Click **Save**
-
-**Step 3: Test**
-1. Create a device in the emulator
-2. Start the device
-3. Open Traccar - the device should appear automatically!
-
-{% hint style="success" %}
-**Auto-sync enabled**: Devices created in the emulator are automatically added to Traccar!
-{% endhint %}
-
-See [Traccar Integration Guide](../user-guide/traccar-integration.md) for detailed setup.
+2. Start emulator device
+3. Check Traccar - positions should appear!
 
 ---
 
