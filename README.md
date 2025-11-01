@@ -66,7 +66,7 @@ See CHANGELOG.md for detailed history.
     <tr>
       <td><strong>🎛️ Multi-Device Dashboard</strong></td>
       <td>Manage multiple GPS devices simultaneously with an intuitive, modern interface</td>
-      <td><img src="/.gitbook/assets/screenshots/screen1.jpg" alt="Dashboard"></td>
+      <td><img src="/.gitbook/assets/screenshots/see_It_In_action_multi_devices.png" alt="Dashboard"></td>
     </tr>
     <tr>
       <td><strong>📋 Device Management</strong></td>
