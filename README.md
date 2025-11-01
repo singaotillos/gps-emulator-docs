@@ -76,7 +76,7 @@ See CHANGELOG.md for detailed history.
     <tr>
       <td><strong>🗺️ Real-time Map Visualization</strong></td>
       <td>Track device positions on interactive maps with live updates</td>
-      <td><img src="/.gitbook/assets/screenshots/screen3.jpg" alt="Map View"></td>
+      <td><img src="/.gitbook/assets/screenshots/see_It_In_action_real_time_map_visualization.png" alt="Map View"></td>
     </tr>
   </tbody>
 </table>
