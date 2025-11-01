@@ -22,10 +22,31 @@ Complete step-by-step installation guide for all platforms.
 
 For experienced users:
 
+{% tabs %}
+{% tab title="Windows" %}
+```cmd
+# 1. Extract files (Right-click > Extract All)
+# Or using PowerShell:
+Expand-Archive -Path Universal-GPS-Tracker-Emulator-v2.0.0.zip -DestinationPath .
+
+# 2. Navigate to folder
+cd Universal-GPS-Tracker-Emulator-v2.0.0
+
+# 3. Install Python dependencies
+pip install -r requirements.txt
+
+# 4. Start application
+python app.py
+
+# 5. Open browser: http://localhost:5000
+```
+{% endtab %}
+
+{% tab title="Linux/macOS" %}
 ```bash
 # 1. Extract files
-unzip universal-gps-emulator.zip
-cd universal-gps-emulator
+unzip Universal-GPS-Tracker-Emulator-v2.0.0.zip
+cd Universal-GPS-Tracker-Emulator-v2.0.0
 
 # 2. Install Python dependencies
 pip install -r requirements.txt
@@ -33,9 +54,10 @@ pip install -r requirements.txt
 # 3. Start application
 python app.py
 
-# 4. Open browser
-# http://localhost:5000
+# 4. Open browser: http://localhost:5000
 ```
+{% endtab %}
+{% endtabs %}
 
 {% hint style="success" %}
 **Installation takes less than 5 minutes!** Python 3.8+ is the only requirement.
