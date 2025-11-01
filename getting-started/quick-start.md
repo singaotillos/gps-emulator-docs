@@ -97,7 +97,7 @@ curl -X POST http://localhost:5000/api/multidevice/devices/dev_tk103_001/start
 
 Navigate to the Map view to see your devices in action:
 
-![Real-time Map Visualization](/.gitbook/assets/screenshots/screen3.jpg)
+![Real-time Map Visualization](/.gitbook/assets/screenshots/Step4_View_Real_time_Map.png)
 
 {% hint style="success" %}
 **Live Tracking!** Devices update their positions automatically every few seconds.
