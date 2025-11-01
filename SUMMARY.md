@@ -7,6 +7,7 @@
 * [Installation](getting-started/installation.md)
 * [Quick Start](getting-started/quick-start.md)
 * [System Requirements](getting-started/system-requirements.md)
+* [Remote Server Deployment](getting-started/remote-deployment.md)
 * [Docker Setup](getting-started/docker-setup.md)
 
 ## User Guide
