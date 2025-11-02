@@ -230,22 +230,6 @@ traccar:
 
 ## Protocol Port Configuration
 
-### Understanding Ports
-
-![Traccar Port Configuration Diagram](/.gitbook/assets/diagrams/traccar-port-configuration.svg)
-
-{% hint style="info" %}
-**📸 DIAGRAMME À CRÉER:**
-- Diagramme montrant deux types de ports:
-  - Web Interface Port: 8082 (HTTP)
-  - Protocol Ports: 5001-5232 (TCP/UDP)
-- Emulator (gauche) → Protocol Ports → Traccar Server
-- User Browser → Port 8082 → Traccar Web Interface
-- Annoter chaque type de connexion
-- Style: Network diagram clair
-- Format: SVG
-{% endhint %}
-
 {% hint style="info" %}
 **Two types of ports:**
 1. **Web Interface Port** (8082) - For API/web access
@@ -270,20 +254,6 @@ traccar:
 ### Check Traccar Protocol Ports
 
 **Location:** Traccar's `traccar.xml` file
-
-![Traccar XML Configuration](/.gitbook/assets/screenshots/traccar-xml-config.png)
-
-{% hint style="info" %}
-**📸 IMAGE À CAPTURER:**
-- Screenshot du fichier traccar.xml ouvert dans un éditeur
-- Montrer les lignes de configuration des ports:
-  - <entry key='tk103.port'>5002</entry>
-  - <entry key='gt06.port'>5023</entry>
-  - etc.
-- Highlighter (surligner) les entrées de ports en jaune
-- Ajouter annotation: "Protocol port configuration"
-- Résolution: 1280x720
-{% endhint %}
 
 {% tabs %}
 {% tab title="Windows" %}
