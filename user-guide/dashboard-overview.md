@@ -2,7 +2,7 @@
 
 Complete guide to the web dashboard interface.
 
-![Dashboard Main View](/.gitbook/assets/screenshots/screen1.jpg)
+![Dashboard Overview](/.gitbook/assets/screenshots/dashboard_overview.png)
 
 ---
 
