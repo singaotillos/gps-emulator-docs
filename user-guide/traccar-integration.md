@@ -91,6 +91,10 @@ The Traccar configuration is managed through the **web interface** and stored in
 
 ![Traccar Configuration Dialog](/.gitbook/assets/screenshots/traccar_configuration_dialog.png)
 
+{% hint style="info" %}
+**Default Credentials:** Use `admin` for both username and password (Traccar defaults)
+{% endhint %}
+
 {% tabs %}
 {% tab title="Via Web Interface (Recommended)" %}
 1. Start the GPS Emulator application:
@@ -100,16 +104,13 @@ The Traccar configuration is managed through the **web interface** and stored in
 
 2. Open http://localhost:5000 in your browser
 
-3. Click the **Traccar** button (top right):
-   ```
-   Traccar
-   ```
+3. Click the **Traccar** button (top right, gear icon)
 
 4. In the Traccar Configuration dialog, enter:
-   - **Server**: `localhost:8082`
-   - **Username**: Your Traccar username (e.g., `admin` or your email)
-   - **Password**: Your Traccar password
-   - **Enable Auto Sync**: checked
+   - **Traccar Server**: `localhost:8082`
+   - **Login / Email**: `admin` (default Traccar username)
+   - **Password**: `admin` (default Traccar password)
+   - **Automatic synchronization**: ✓ checked
 
 5. Click **Save**
 
