@@ -480,48 +480,6 @@ Lists all devices in Traccar.
 {% endtab %}
 {% endtabs %}
 
-### Monitor Real-Time Updates
-
-![Emulator and Traccar Side by Side](/.gitbook/assets/screenshots/emulator-traccar-side-by-side.png)
-
-{% hint style="info" %}
-**📸 IMAGE À CAPTURER:**
-- Split screen montrant:
-  - Gauche: Emulator dashboard (http://localhost:5000)
-  - Droite: Traccar map view (http://localhost:8082)
-- Même device visible dans les deux interfaces
-- Position synchronisée visible
-- Timestamps identiques ou très proches
-- Ajouter ligne ou flèche montrant la synchronisation
-- Annotation: "Real-time synchronization between emulator and Traccar"
-- Résolution: 1920x1080
-{% endhint %}
-
-![Traccar Integration Workflow](/.gitbook/assets/gifs/traccar-integration-workflow.gif)
-
-{% hint style="info" %}
-**📸 GIF ANIMÉ À CRÉER:**
-- Animation 20-30 secondes du workflow complet:
-  1. Configure emulator (.env file)
-  2. Create device in emulator
-  3. Start device
-  4. Switch to Traccar interface
-  5. Device appears automatically
-  6. Watch position updates in real-time
-- Montrer les deux interfaces (split screen ou alternance)
-- Ajouter annotations pour chaque étape
-- Format: GIF optimisé < 8MB
-- FPS: 10-15
-{% endhint %}
-
-**Watch device updates:**
-
-1. Open emulator dashboard: http://localhost:5000
-2. Open Traccar: http://localhost:8082
-3. Start device in emulator
-4. Watch position update in both interfaces
-5. Updates every 10 seconds (default)
-
 ---
 
 ## Troubleshooting
