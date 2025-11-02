@@ -69,22 +69,6 @@ Password: admin
 
 ## Quick Setup (5 Minutes)
 
-![Traccar Integration Overview](/.gitbook/assets/diagrams/traccar-integration-overview.svg)
-
-{% hint style="info" %}
-**📸 DIAGRAMME À CRÉER:**
-- Diagramme d'architecture montrant:
-  - GPS Emulator (à gauche)
-  - Flèche avec "GPS Protocol Data (TK103, GT06, etc.)" vers Traccar Server
-  - Traccar Server (au milieu)
-  - Traccar Web Interface (à droite)
-  - Ports: 5002, 5023, etc. pour protocols
-  - Port: 8082 pour web interface
-- Style: Architecture diagram propre et professionnel
-- Format: SVG vectoriel
-- Couleurs: Bleu/Vert pour flux de données
-{% endhint %}
-
 ### Step 1: Configure Traccar Credentials
 
 The Traccar configuration is managed through the **web interface** and stored in the `.env` file.
