@@ -17,6 +17,8 @@ The GPS Tracker Emulator supports **sending commands** to devices through the Tr
 
 Commands are sent via the **Traccar API** and are protocol-specific.
 
+![Send Command - Stop Engine Example](/.gitbook/assets/gifs/send_command_stop_engine.gif)
+
 ---
 
 ## 📋 Supported Command Types
