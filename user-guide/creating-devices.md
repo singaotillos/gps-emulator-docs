@@ -37,17 +37,9 @@ http://localhost:5000
 
 **2. Click "Create New Device"**
 
-Find the button on the dashboard homepage.
+Find the button on the dashboard homepage and follow the workflow:
 
-![Create Device Button](/.gitbook/assets/screenshots/create-device-button.png)
-
-{% hint style="info" %}
-**📸 IMAGE À CAPTURER:**
-- Dashboard avec bouton "Create Device" visible
-- Ajouter flèche rouge pointant vers le bouton
-- Ajouter rectangle rouge autour du bouton
-- Annotation: "Click here to create a new device"
-{% endhint %}
+![Create Your First Device](/.gitbook/assets/gifs/create_your_first_device.gif)
 
 **3. Fill Device Information**
 
