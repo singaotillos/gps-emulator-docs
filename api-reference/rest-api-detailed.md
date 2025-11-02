@@ -19,6 +19,7 @@ Complete REST API documentation for integrating with the GPS emulator.
   - [Protocol Information](#protocol-information)
   - [Routes & Tracking](#routes--tracking)
   - [Traccar Integration](#traccar-integration)
+  - [Device Commands](#device-commands)
   - [Configuration](#configuration)
   - [WebSocket Events](#websocket-events)
 - [Code Examples](#code-examples)
@@ -969,6 +970,206 @@ curl -X POST http://localhost:5000/api/traccar/resync
   "added": 5,
   "updated": 3,
   "failed": 0
+}
+```
+
+---
+
+### Device Commands
+
+#### GET /api/protocol/:protocol/commands
+
+Get available commands for a specific protocol.
+
+**Request:**
+```bash
+curl http://localhost:5000/api/protocol/tk103/commands
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "protocol": "tk103",
+  "commands": [
+    {
+      "id": "engineStop",
+      "type": "Command.TYPE_ENGINE_STOP",
+      "description": "Stop Engine",
+      "icon": "fas fa-stop",
+      "commandString": "**,imei:STOP#"
+    },
+    {
+      "id": "engineResume",
+      "type": "Command.TYPE_ENGINE_RESUME",
+      "description": "Resume Engine",
+      "icon": "fas fa-play",
+      "commandString": "**,imei:RESUME#"
+    },
+    {
+      "id": "positionSingle",
+      "type": "Command.TYPE_POSITION_SINGLE",
+      "description": "Request Single Position",
+      "icon": "fas fa-map-marker-alt",
+      "commandString": "**,imei:GETLOCATION#"
+    }
+  ]
+}
+```
+
+**Error Response:**
+```json
+{
+  "success": false,
+  "error": "Protocol gt90 not found",
+  "available_protocols": ["tk103", "gt06", "teltonika", ...]
+}
+```
+
+---
+
+#### POST /api/send-command
+
+Send a command to a device via Traccar.
+
+**Request:**
+```bash
+curl -X POST http://localhost:5000/api/send-command \
+     -H "Content-Type: application/json" \
+     -d '{
+       "protocol": "tk103",
+       "deviceId": "357938506404024",
+       "command": "engineStop",
+       "commandType": "Command.TYPE_ENGINE_STOP",
+       "commandData": ""
+     }'
+```
+
+**Request Body:**
+```json
+{
+  "protocol": "tk103",
+  "deviceId": "357938506404024",
+  "command": "engineStop",
+  "commandType": "Command.TYPE_ENGINE_STOP",
+  "commandData": ""
+}
+```
+
+**Parameters:**
+- `protocol` (string, required): Protocol name (e.g., "tk103", "gt06")
+- `deviceId` (string, required): Device unique identifier
+- `command` (string, required): Command ID from protocol commands list
+- `commandType` (string, required): Traccar command type (e.g., "Command.TYPE_ENGINE_STOP")
+- `commandData` (string, optional): Additional command data for custom commands
+
+**Response (Success):**
+```json
+{
+  "success": true,
+  "message": "Command sent successfully",
+  "traccar_response": {
+    "id": 123,
+    "deviceId": 5,
+    "type": "engineStop",
+    "textChannel": false,
+    "sent": true,
+    "serverTime": "2025-11-02T10:30:00.000Z"
+  }
+}
+```
+
+**Response (Error):**
+```json
+{
+  "success": false,
+  "error": "Device not found in Traccar",
+  "deviceId": "357938506404024"
+}
+```
+
+**Common Errors:**
+- `400`: Invalid request (missing protocol or deviceId)
+- `404`: Device not found in Traccar
+- `401`: Traccar authentication failed
+- `500`: Traccar server connection error
+
+---
+
+#### GET /api/command-result
+
+Get the result of a sent command.
+
+**Request:**
+```bash
+curl "http://localhost:5000/api/command-result?deviceId=357938506404024&commandId=123"
+```
+
+**Query Parameters:**
+- `deviceId` (string, required): Device unique identifier
+- `commandId` (integer, required): Command ID returned from send-command
+
+**Response:**
+```json
+{
+  "success": true,
+  "result": {
+    "id": 123,
+    "deviceId": 5,
+    "type": "engineStop",
+    "sent": true,
+    "delivered": true,
+    "serverTime": "2025-11-02T10:30:00.000Z",
+    "deviceTime": "2025-11-02T10:30:15.000Z",
+    "response": "OK"
+  }
+}
+```
+
+**Status Fields:**
+- `sent`: Command sent from server to device
+- `delivered`: Device acknowledged receipt
+- `response`: Device response (if available)
+
+---
+
+#### GET /api/command-history
+
+Get command history for a device.
+
+**Request:**
+```bash
+curl "http://localhost:5000/api/command-history?deviceId=357938506404024&limit=10"
+```
+
+**Query Parameters:**
+- `deviceId` (string, required): Device unique identifier
+- `limit` (integer, optional): Maximum number of results (default: 50)
+
+**Response:**
+```json
+{
+  "success": true,
+  "deviceId": "357938506404024",
+  "history": [
+    {
+      "id": 123,
+      "type": "engineStop",
+      "sent": true,
+      "delivered": true,
+      "serverTime": "2025-11-02T10:30:00.000Z",
+      "deviceTime": "2025-11-02T10:30:15.000Z"
+    },
+    {
+      "id": 122,
+      "type": "positionSingle",
+      "sent": true,
+      "delivered": true,
+      "serverTime": "2025-11-02T09:15:00.000Z",
+      "deviceTime": "2025-11-02T09:15:10.000Z"
+    }
+  ],
+  "total": 25
 }
 ```
 

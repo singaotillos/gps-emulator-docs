@@ -15,6 +15,7 @@
 * [Dashboard Overview](user-guide/dashboard-overview.md)
 * [Creating Devices](user-guide/creating-devices.md)
 * [Managing Devices](user-guide/managing-devices.md)
+* [Sending Commands](user-guide/sending-commands.md)
 * [Configuration](user-guide/configuration.md)
 * [Custom Routes](user-guide/custom-routes.md)
 * [Traccar Integration](user-guide/traccar-integration.md)
