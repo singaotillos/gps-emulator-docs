@@ -258,8 +258,7 @@ curl -X POST http://localhost:5000/api/multidevice/devices \
 
 ### Step 3: Start Simulation
 
-<!-- PLACEHOLDER: Screenshot - Device running with live data -->
-![Device Running](/.gitbook/assets/screenshots/device-running-stop-button.png)
+![Device Running](/.gitbook/assets/gifs/start_simulation.gif)
 
 **Monitor in real-time:**
 - Current GPS position (lat/lon)
