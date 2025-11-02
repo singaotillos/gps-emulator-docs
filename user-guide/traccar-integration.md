@@ -160,19 +160,7 @@ curl -X POST http://localhost:5000/api/multidevice/devices/DEVICE_ID/start
 
 ### Step 4: View in Traccar
 
-![Device in Traccar Map View](/.gitbook/assets/screenshots/traccar-device-map-view.png)
-
-{% hint style="info" %}
-**📸 IMAGE À CAPTURER:**
-- Screenshot Traccar web interface (http://localhost:8082)
-- Map montrant device EMU_TK103_xxx visible et en ligne (vert)
-- Position du device sur la carte (Paris par exemple)
-- Sidebar gauche montrant le device dans la liste
-- Panneau de détails montrant: speed, position, timestamp
-- Ajouter flèche vers device sur la carte
-- Annotation: "Device automatically created and online"
-- Résolution: 1920x1080
-{% endhint %}
+![Device in Traccar Map View](/.gitbook/assets/screenshots/view_in_traccar.png)
 
 1. Open Traccar: http://localhost:8082
 2. Login with admin/admin
