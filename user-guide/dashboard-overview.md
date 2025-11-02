@@ -15,15 +15,14 @@ The dashboard provides a modern, responsive interface for managing GPS devices.
 1. **Top Navigation Bar**
    - Logo and branding
    - System status
-   - User menu
-   - Settings
+   - Settings button (gear icon + Traccar)
 
 2. **Device List**
    - All devices with status
    - Real-time updates
    - Quick actions (Start/Stop/Delete)
 
-![Device List View](/.gitbook/assets/screenshots/screen2.jpg)
+![Device List View](/.gitbook/assets/screenshots/device_list.png)
 
 3. **Device Details Panel**
    - Current position
