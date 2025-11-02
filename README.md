@@ -35,7 +35,7 @@ Complete Tutorial: Creating and Managing GPS Devices
 
 ### Multi-Device Management
 
-![Multi-Device Management](/.gitbook/assets/see_It_In_action_multi_devices_management.png)
+![Multi-Device Management](/.gitbook/assets/screenshots/see_It_In_action_multi_devices_management.png)
 
 **Manage multiple devices simultaneously:**
 - Create up to 100+ devices
