@@ -92,7 +92,7 @@ Find the button on the dashboard homepage and follow the workflow:
 **Watch:** Creating your first device in the GPS Emulator (2 minutes)
 {% endhint %}
 
-{% embed url="https://www.youtube.com/watch?v=YOUR_VIDEO_ID" %}
+{% embed url="https://www.youtube.com/watch?v=_i59hUqqzRk" %}
 Complete walkthrough of creating your first GPS device
 {% endembed %}
 
@@ -102,15 +102,6 @@ Complete walkthrough of creating your first GPS device
 - Filling device information
 - Starting the device simulation
 - Viewing device in Traccar
-
-{% hint style="info" %}
-**Video file location:** `C:\Users\PRO\Downloads\Codecanyon\Universal GPS Tracker Emulator.webm`
-
-**To add to GitBook:**
-1. Upload video to YouTube or Vimeo
-2. Replace `YOUR_VIDEO_ID` above with actual video ID
-3. GitBook will embed the video player automatically
-{% endhint %}
 
 ---
 
