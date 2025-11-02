@@ -270,17 +270,14 @@ curl -X POST http://localhost:5000/api/multidevice/devices \
 
 ### Step 4: View in Traccar
 
-<!-- PLACEHOLDER: Screenshot - Traccar showing device -->
-<!-- TODO: Create screenshot of Traccar with emulated device -->
-<!-- TEMPORARY PLACEHOLDER -->
-```
-📍 Device visible in Traccar
-├── Device ID: dev_tk103_357938506404024
-├── Status: Online
-├── Position: 48.8566°N, 2.3522°E
-├── Speed: 50 km/h
-└── Last update: Just now
-```
+![Traccar Device View](/.gitbook/assets/screenshots/view_in_traccar.png)
+
+**📍 Device visible in Traccar:**
+- **Device ID:** TELTONIKA_FMB965_357938502775402601882000
+- **Status:** Online
+- **Position:** 48.8566°N, 2.3522°E
+- **Speed:** 11.88 kn
+- **Last update:** Just now
 
 **Traccar integration is automatic!**
 - Devices auto-created in Traccar
