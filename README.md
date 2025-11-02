@@ -234,10 +234,7 @@ python app.py
 
 ### Step 2: Create Your First Device
 
-<!-- PLACEHOLDER: Animated GIF - Device creation workflow -->
-<!-- TODO: Create GIF showing UI interaction -->
-<!-- TEMPORARY: Using screenshot -->
-![Create Device](/.gitbook/assets/screenshots/device-edit-config-dialog.png)
+![Create Device](/.gitbook/assets/gifs/create_your_first_device.gif)
 
 **Quick creation via UI:**
 1. Select protocol (e.g., TK103)
