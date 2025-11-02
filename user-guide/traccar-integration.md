@@ -311,20 +311,7 @@ If `TRACCAR_AUTO_CREATE_DEVICES=false`, create devices manually:
 
 ### Method 1: Traccar Web Interface
 
-![Traccar Add Device Dialog](/.gitbook/assets/screenshots/traccar-add-device-dialog.png)
-
-{% hint style="info" %}
-**📸 IMAGE À CAPTURER:**
-- Screenshot Traccar "Add Device" dialog ouvert
-- Champs visibles:
-  - Name: "Test Vehicle 001"
-  - Identifier: "357938506404024"
-  - Category: dropdown avec "Car" sélectionné
-- Bouton "Save" visible
-- Ajouter flèches vers les champs importants
-- Annotation: "Enter device identifier from emulator"
-- Résolution: 1280x720
-{% endhint %}
+![Traccar Add Device Dialog](/.gitbook/assets/screenshots/manual_device_creation_traccar.png)
 
 **Step 1: Login to Traccar**
 - Go to http://localhost:8082
