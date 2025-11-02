@@ -220,51 +220,6 @@ print(f"Device started: {response.json()['message']}")
 
 ---
 
-## Route Planning Tools
-
-### Getting Coordinates
-
-**Method 1: Google Maps**
-
-1. Go to [Google Maps](https://maps.google.com)
-2. Right-click on location
-3. Click first number (coordinates)
-4. Copy latitude, longitude
-
-**Method 2: OpenStreetMap**
-
-1. Go to [OpenStreetMap](https://www.openstreetmap.org)
-2. Right-click on location
-3. Select "Show address"
-4. Copy coordinates
-
-**Method 3: GPS Coordinates Tool**
-
-Online tools:
-- https://www.gps-coordinates.net
-- https://www.latlong.net
-- https://gps-coordinates.org
-
-### Planning a Route
-
-**Steps:**
-
-1. **Start Point** - Where vehicle begins
-2. **Waypoints** - Intermediate stops (2-10 points)
-3. **End Point** - Where vehicle ends (can be same as start)
-
-**Tips:**
-
-{% hint style="info" %}
-**Best practices for routes:**
-- Use 3-6 waypoints for realistic movement
-- Vary speeds at different points
-- Close the loop (end = start) for continuous simulation
-- Space points 1-5 km apart
-{% endhint %}
-
----
-
 ## Route Examples
 
 ### Example 1: Simple Loop
