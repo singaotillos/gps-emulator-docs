@@ -24,7 +24,7 @@ http://localhost:5000
 
 You should see the **Universal GPS Tracker Emulator** dashboard.
 
-![Dashboard Overview](/.gitbook/assets/screenshots/screen1.jpg)
+![Dashboard Overview](/.gitbook/assets/screenshots/first_launch.png)
 
 {% hint style="success" %}
 **Tip:** Bookmark this URL for quick access!
