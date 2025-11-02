@@ -1,13 +1,5 @@
 # REST API Reference
 
-Complete REST API documentation for the GPS Emulator.
-
-![API Swagger Interface](/.gitbook/assets/screenshots/screen4.jpg)
-
-{% hint style="info" %}
-**Interactive API Docs** - Access the full Swagger UI at: `http://localhost:5000/api/docs/`
-{% endhint %}
-
 ---
 
 ## Overview
