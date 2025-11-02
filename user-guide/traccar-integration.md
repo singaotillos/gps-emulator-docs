@@ -89,6 +89,8 @@ Password: admin
 
 The Traccar configuration is managed through the **web interface** and stored in the `.env` file.
 
+![Traccar Configuration Dialog](/.gitbook/assets/screenshots/traccar_configuration_dialog.png)
+
 {% tabs %}
 {% tab title="Via Web Interface (Recommended)" %}
 1. Start the GPS Emulator application:
