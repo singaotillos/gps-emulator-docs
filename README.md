@@ -243,6 +243,9 @@ python app.py
 4. Click "Add Device"
 
 **Or use the API:**
+
+{% tabs %}
+{% tab title="Linux / macOS" %}
 ```bash
 curl -X POST http://localhost:5000/api/multidevice/devices \
   -H "Content-Type: application/json" \
@@ -253,6 +256,49 @@ curl -X POST http://localhost:5000/api/multidevice/devices \
     "speed": 50.0
   }'
 ```
+{% endtab %}
+
+{% tab title="Windows (PowerShell)" %}
+```powershell
+$body = @{
+    protocol = "tk103"
+    device_model = "TK103-2B"
+    route = "paris"
+    speed = 50.0
+} | ConvertTo-Json
+
+Invoke-RestMethod -Uri "http://localhost:5000/api/multidevice/devices" `
+    -Method POST `
+    -ContentType "application/json" `
+    -Body $body
+```
+{% endtab %}
+
+{% tab title="Windows (CMD)" %}
+```cmd
+curl -X POST http://localhost:5000/api/multidevice/devices ^
+  -H "Content-Type: application/json" ^
+  -d "{\"protocol\":\"tk103\",\"device_model\":\"TK103-2B\",\"route\":\"paris\",\"speed\":50.0}"
+```
+{% endtab %}
+
+{% tab title="Python" %}
+```python
+import requests
+
+response = requests.post(
+    "http://localhost:5000/api/multidevice/devices",
+    json={
+        "protocol": "tk103",
+        "device_model": "TK103-2B",
+        "route": "paris",
+        "speed": 50.0
+    }
+)
+print(response.json())
+```
+{% endtab %}
+{% endtabs %}
 
 ---
 
