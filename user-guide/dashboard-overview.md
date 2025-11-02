@@ -34,7 +34,7 @@ The dashboard provides a modern, responsive interface for managing GPS devices.
    - Route visualization
    - Interactive controls
 
-![Map Visualization](/.gitbook/assets/screenshots/screen3.jpg)
+![Real-Time Map View](/.gitbook/assets/screenshots/Step4_View_Real_time_Map.png)
 
 ---
 
