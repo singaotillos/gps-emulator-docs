@@ -244,6 +244,8 @@ python app.py
 
 **Or use the API:**
 
+![Create Device via API](/.gitbook/assets/gifs/create_device_api.gif)
+
 {% tabs %}
 {% tab title="Linux / macOS" %}
 ```bash
