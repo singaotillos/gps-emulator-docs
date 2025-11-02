@@ -98,16 +98,6 @@ Done! Continue to [Post-Installation](#post-installation) for configuration.
    - Go to: http://localhost:5000
    - You should see the dashboard!
 
-#### Create Desktop Shortcut (Optional)
-
-Create file `start-emulator.bat`:
-```batch
-@echo off
-cd C:\path\to\universal-gps-emulator
-python app.py
-pause
-```
-
 ---
 
 ### Linux Installation
