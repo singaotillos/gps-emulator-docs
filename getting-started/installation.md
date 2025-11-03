@@ -86,7 +86,7 @@ Done! Continue to [Post-Installation](#post-installation) for configuration.
    copy .env.example .env
    notepad .env
    ```
-   Edit configuration as needed (see CONFIGURATION.md)
+   Edit configuration as needed (see [Configuration Guide](../user-guide/configuration.md))
 
 4. **Start Application**
    ```cmd
@@ -429,17 +429,17 @@ docker rmi gps-emulator
 
 ## Next Steps
 
-1. Read [CONFIGURATION.md](CONFIGURATION.md) for customization
-2. Check [API_REFERENCE.md](API_REFERENCE.md) for API usage
-3. See [PROTOCOLS.md](PROTOCOLS.md) for protocol list
-4. Review [FAQ.md](FAQ.md) for common questions
+1. Read [Configuration Guide](../user-guide/configuration.md) for customization
+2. Check [REST API Reference](../api-reference/rest-api.md) for API usage
+3. See [Protocols Overview](../protocols/overview.md) for protocol list
+4. Review [FAQ](../support/faq.md) for common questions
 
 ---
 
 ## Need Help?
 
-- Check [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
-- Read [FAQ.md](FAQ.md)
+- Check [Troubleshooting Guide](../support/troubleshooting.md)
+- Read [FAQ](../support/faq.md)
 - Email: support@your-domain.com
 - Response time: 24-48 hours
 
