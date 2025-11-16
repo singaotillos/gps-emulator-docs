@@ -1,7 +1,9 @@
 # Universal GPS Tracker Emulator - Professional Edition
 
 ![Version](https://img.shields.io/badge/version-5.0-blue.svg)
-![Python](https://img.shields.io/badge/python-3.10--3.13-brightgreen.svg)
+![Python](https://img.shields.io/badge/python-3.10%2B-brightgreen.svg)
+![Windows](https://img.shields.io/badge/Windows-3.13%2B-blue.svg)
+![Linux](https://img.shields.io/badge/Linux-3.10--3.11-orange.svg)
 ![License](https://img.shields.io/badge/license-Commercial-blue.svg)
 ![Protocols](https://img.shields.io/badge/protocols-87-success.svg)
 
@@ -219,7 +221,7 @@ Learning GPS protocols and tracking systems:
                      │
                      ▼
 ┌─────────────────────────────────────────────────────────┐
-│           86 Protocol Implementations                   │
+│           87 Protocol Implementations                   │
 │  (GPS103, TK103, GT06, Teltonika, etc.)                │
 └────────────────────┬────────────────────────────────────┘
                      │ TCP/UDP/HTTP

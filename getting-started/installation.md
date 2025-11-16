@@ -154,14 +154,19 @@ Done! Continue to [Post-Installation](#post-installation) for configuration.
      ```
 
 2. **Install Dependencies**
+
+   {% hint style="danger" %}
+   **CRITICAL**: Windows users must use `requirements-windows.txt` (NOT `requirements.txt`)!
+   {% endhint %}
+
    ```cmd
-   pip install -r requirements.txt
+   pip install -r requirements-windows.txt
    ```
 
    If you get an error, try:
    ```cmd
    python -m pip install --upgrade pip
-   python -m pip install -r requirements.txt
+   python -m pip install -r requirements-windows.txt
    ```
 
 3. **Configure Application (Optional)**
