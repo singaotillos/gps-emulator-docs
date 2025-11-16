@@ -1,9 +1,9 @@
 # Universal GPS Tracker Emulator - Professional Edition
 
-![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)
-![Python](https://img.shields.io/badge/python-3.8%2B-brightgreen.svg)
-![License](https://img.shields.io/badge/license-Envato-blue.svg)
-![Protocols](https://img.shields.io/badge/protocols-86%2B-success.svg)
+![Version](https://img.shields.io/badge/version-5.0-blue.svg)
+![Python](https://img.shields.io/badge/python-3.10--3.13-brightgreen.svg)
+![License](https://img.shields.io/badge/license-Commercial-blue.svg)
+![Protocols](https://img.shields.io/badge/protocols-87-success.svg)
 
 ---
 
@@ -60,7 +60,7 @@ Complete Tutorial: Creating and Managing GPS Devices
 
 ## ✨ Key Features
 
-### 🌍 86+ GPS Protocols Supported
+### 🌍 87 GPS Protocols Supported
 
 <!-- PLACEHOLDER: Graphic showing protocol logos/icons in a grid -->
 ```
@@ -69,11 +69,11 @@ Complete Tutorial: Creating and Managing GPS Devices
 ├─────────────────────────────────────────────────────────┤
 │  H02    │  GPS103│  Meiligao   │  Suntech│  Fifotrack │
 ├─────────────────────────────────────────────────────────┤
-│  Watch  │  AIS   │  Navigil    │  Castel │  And 71+   │
+│  Watch  │  AIS   │  Navigil    │  Castel │  And 72+   │
 └─────────────────────────────────────────────────────────┘
 ```
 
-Full protocol list: [View All 86 Protocols](protocols/all-protocols.md)
+Full protocol list: [View All 87 Protocols](protocols/all-protocols.md)
 
 ---
 
@@ -96,12 +96,15 @@ Full protocol list: [View All 86 Protocols](protocols/all-protocols.md)
 <!-- TODO: Create screenshot of API documentation page -->
 <!-- TEMPORARY PLACEHOLDER -->
 ```
-📋 32+ API Endpoints Available
+📋 35+ API Endpoints Available
+├── System Status (4 endpoints)
 ├── Device Management (8 endpoints)
-├── Protocol Information (3 endpoints)
-├── Traccar Integration (4 endpoints)
-├── Commands & Control (3 endpoints)
-└── System Status (5 endpoints)
+├── Traccar Integration (5 endpoints)
+├── Route Management (4 endpoints)
+├── Vehicle Data (2 endpoints)
+├── Commands & Control (4 endpoints)
+├── Protocol Information (4 endpoints)
+└── Legacy Endpoints (6 endpoints)
 ```
 
 **Full API documentation:** [REST API Reference](api-reference/rest-api-detailed.md)
@@ -189,11 +192,14 @@ Learning GPS protocols and tracking systems:
 ```
 
 **Stack:**
-- **Backend**: Python 3.8+ (Flask)
-- **Frontend**: HTML5, Bootstrap 5, jQuery
-- **Database**: SQLite (PostgreSQL compatible)
-- **API**: RESTful + WebSocket
+- **Backend**: Python 3.10-3.13 (Flask 3.0.0, Flask-SocketIO 5.3.5)
+- **Frontend**: HTML5, Bootstrap 5, jQuery, Leaflet.js 1.9.4
+- **Database**: SQLite (vehicle attributes persistence)
+- **API**: RESTful (35+ endpoints) + WebSocket (Socket.IO 4.6.0)
+- **Async**: Eventlet 0.33.3 (Windows), Gunicorn + Gevent (Production)
 - **Protocols**: TCP/UDP/HTTP
+- **Routing**: OSRM (Open Source Routing Machine) for realistic road-based routing
+- **Configuration**: YAML/JSON with hot-reload support (watchdog)
 
 ### Performance
 
@@ -224,9 +230,9 @@ python app.py
 
 **Expected output:**
 ```
-✅ Universal GPS Tracker Emulator v2.0.0
+✅ Universal GPS Tracker Emulator v5.0
 🌐 Dashboard: http://localhost:5000
-🔌 86 protocols loaded
+🔌 87 protocols loaded
 ⚡ Ready to simulate GPS devices!
 ```
 
@@ -522,18 +528,20 @@ Ready to revolutionize your GPS testing workflow?
 
 ## 📋 System Requirements
 
-### Minimum Requirements
-- **OS**: Windows 10+, Linux, macOS 10.14+
-- **Python**: 3.8 or higher
-- **RAM**: 2 GB
+### Windows Local (Development)
+- **OS**: Windows 10/11
+- **Python**: 3.10 - 3.13+
+- **RAM**: 2 GB minimum, 4 GB recommended
 - **Storage**: 500 MB
+- **Network**: Localhost (127.0.0.1)
 
-### Recommended
-- **OS**: Windows 11, Ubuntu 22.04, macOS 12+
-- **Python**: 3.10+
-- **RAM**: 4 GB+
-- **Storage**: 1 GB
-- **CPU**: Multi-core processor
+### DigitalOcean Production (Server)
+- **OS**: Ubuntu 22.04/24.04 LTS
+- **Python**: 3.10 - 3.11
+- **RAM**: 2 GB minimum, 4 GB+ recommended
+- **Storage**: 10 GB SSD minimum, 20 GB recommended
+- **CPU**: 1 vCPU minimum, 2 vCPU recommended
+- **Network**: Public access (0.0.0.0)
 
 {% content-ref url="getting-started/system-requirements.md" %}
 [system-requirements.md](getting-started/system-requirements.md)
@@ -543,13 +551,15 @@ Ready to revolutionize your GPS testing workflow?
 
 ## 📜 License
 
-This software is licensed through **Envato Market** (CodeCanyon).
+This software is available in multiple versions:
 
-**Available Licenses:**
-- **Regular License**: For single end product (not for resale)
-- **Extended License**: For products offered for sale to end users
+**Available Versions:**
+- **Demo Version**: Limited devices for testing and evaluation
+- **Commercial Unlimited Version**: Unlimited devices with all features included
 
-Please review the [Envato License Terms](https://codecanyon.net/licenses/standard) before purchase.
+**Configuration:**
+- License type and device limits are configured in the `.env` file
+- Commercial version: `LICENSE_TYPE=COMMERCIAL` with `MAX_DEVICES=-1` (unlimited)
 
 {% content-ref url="resources/license.md" %}
 [license.md](resources/license.md)
@@ -559,14 +569,20 @@ Please review the [Envato License Terms](https://codecanyon.net/licenses/standar
 
 ## 📊 Version History
 
-### Version 2.0.0 (Current)
-- ✅ 86 GPS protocols supported
-- ✅ Modern web interface
-- ✅ REST API with Swagger docs
-- ✅ Multi-device simulation
-- ✅ Real-time monitoring
-- ✅ Plugin system
-- ✅ Comprehensive tests
+### Version 5.0 (Current - November 2025)
+- ✅ 87 GPS protocols supported
+- ✅ Modern web interface (Bootstrap 5)
+- ✅ REST API (35+ endpoints)
+- ✅ Multi-device simulation (100+ devices)
+- ✅ Real-time WebSocket updates (Socket.IO 4.6.0)
+- ✅ Vehicle attributes database (SQLite)
+- ✅ OSRM realistic routing engine
+- ✅ Traccar auto-sync integration
+- ✅ Windows 10/11 + Ubuntu deployment
+- ✅ Python 3.13 support
+- ✅ Commercial unlimited version
+- ✅ Advanced configuration system with hot-reload
+- ✅ Eventlet 0.33.3 async server
 
 {% content-ref url="resources/changelog.md" %}
 [changelog.md](resources/changelog.md)
