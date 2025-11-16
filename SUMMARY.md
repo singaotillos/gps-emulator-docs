@@ -5,10 +5,11 @@
 ## Getting Started
 
 * [Installation](getting-started/installation.md)
+  * [Windows Local Installation](getting-started/windows-local.md)
+  * [DigitalOcean Production](getting-started/digitalocean-production.md)
 * [Quick Start](getting-started/quick-start.md)
 * [System Requirements](getting-started/system-requirements.md)
 * [Remote Server Deployment](getting-started/remote-deployment.md)
-* [Docker Setup](getting-started/docker-setup.md)
 
 ## User Guide
 

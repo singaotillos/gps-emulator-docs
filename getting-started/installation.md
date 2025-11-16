@@ -1,6 +1,62 @@
 # Installation Guide - Universal GPS Tracker Emulator
 
-Complete step-by-step installation guide for all platforms.
+Complete step-by-step installation guide for both deployment versions.
+
+---
+
+## Choose Your Installation
+
+The GPS Emulator is available in **two versions** optimized for different use cases:
+
+### 🖥️ Windows Local (Development)
+
+{% hint style="info" %}
+**Best for:** Local development, testing, debugging on Windows 10/11
+{% endhint %}
+
+- ✅ **Python 3.13** compatible
+- ✅ **Localhost only** (127.0.0.1)
+- ✅ **Quick setup** with batch scripts
+- ✅ **Threading mode** (no gevent)
+- 📦 **Use:** `requirements-windows.txt`
+
+{% content-ref url="windows-local.md" %}
+[windows-local.md](windows-local.md)
+{% endcontent-ref %}
+
+---
+
+### 🌐 DigitalOcean Production (Server)
+
+{% hint style="success" %}
+**Best for:** Production deployment on Ubuntu servers (DigitalOcean, AWS, etc.)
+{% endhint %}
+
+- ✅ **Ubuntu 22.04/24.04** optimized
+- ✅ **Public access** (0.0.0.0)
+- ✅ **Systemd service** (auto-start)
+- ✅ **Gunicorn + Gevent** (high performance)
+- 📦 **Use:** `requirements.txt`
+
+{% content-ref url="digitalocean-production.md" %}
+[digitalocean-production.md](digitalocean-production.md)
+{% endcontent-ref %}
+
+---
+
+## Quick Comparison
+
+| Feature | Windows Local | DigitalOcean Production |
+|---------|--------------|------------------------|
+| **Platform** | Windows 10/11 | Ubuntu 22.04/24.04 |
+| **Python** | 3.10 - 3.13+ | 3.10 - 3.11 |
+| **Setup** | `install.bat` | `install.sh` |
+| **Start** | `start.bat` | `systemctl start` |
+| **Async** | Threading | Gevent |
+| **Server** | Flask dev | Gunicorn |
+| **Access** | Localhost | Network/Internet |
+| **Auto-start** | No | Yes (systemd) |
+| **Use Case** | Development | Production |
 
 ---
 
@@ -10,8 +66,6 @@ Complete step-by-step installation guide for all platforms.
 - [Detailed Installation](#detailed-installation)
   - [Windows](#windows-installation)
   - [Linux/Ubuntu](#linux-installation)
-  - [macOS](#macos-installation)
-  - [Docker](#docker-installation)
 - [Post-Installation](#post-installation)
 - [Troubleshooting](#troubleshooting)
 - [Uninstallation](#uninstallation)
@@ -20,21 +74,40 @@ Complete step-by-step installation guide for all platforms.
 
 ## Quick Installation
 
-For experienced users:
+{% hint style="warning" %}
+**Important:** Choose the correct requirements file for your platform:
+- Windows: `requirements-windows.txt`
+- Linux/Ubuntu: `requirements.txt`
+{% endhint %}
+
+### Windows Quick Start
+
+```cmd
+REM 1. Extract files
+cd C:\path\to\universal-gps-emulator\local
+
+REM 2. Run automated installer
+install.bat
+
+REM 3. Start application
+start.bat
+
+REM 4. Open browser
+REM http://localhost:5000
+```
+
+### Linux/Ubuntu Quick Start
 
 ```bash
 # 1. Extract files
-unzip universal-gps-emulator.zip
-cd universal-gps-emulator
+cd /opt/universal-gps-emulator
 
-# 2. Install Python dependencies
-pip install -r requirements.txt
+# 2. Run automated installer
+sudo chmod +x install.sh
+sudo ./install.sh
 
-# 3. Start application
-python app.py
-
-# 4. Open browser
-# http://localhost:5000
+# 3. Application auto-started via systemd
+# http://YOUR_SERVER_IP:5000
 ```
 
 Done! Continue to [Post-Installation](#post-installation) for configuration.
@@ -176,98 +249,6 @@ Enable and start:
 sudo systemctl enable gps-emulator
 sudo systemctl start gps-emulator
 sudo systemctl status gps-emulator
-```
-
----
-
-### macOS Installation
-
-#### Prerequisites
-
-1. **Install Homebrew** (if not installed)
-   ```bash
-   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-   ```
-
-2. **Install Python**
-   ```bash
-   brew install python@3.10
-   ```
-
-3. **Extract Archive**
-   ```bash
-   unzip universal-gps-emulator.zip
-   cd universal-gps-emulator
-   ```
-
-#### Installation Steps
-
-1. **Create Virtual Environment**
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate
-   ```
-
-2. **Install Dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Configure**
-   ```bash
-   cp .env.example .env
-   nano .env
-   ```
-
-4. **Start Application**
-   ```bash
-   python app.py
-   ```
-
-5. **Access**
-   http://localhost:5000
-
----
-
-### Docker Installation
-
-#### Quick Start
-
-```bash
-# Build image
-docker build -t gps-emulator .
-
-# Run container
-docker run -d -p 5000:5000 --name gps-emulator gps-emulator
-
-# Access
-# http://localhost:5000
-```
-
-#### Docker Compose
-
-Create `docker-compose.yml`:
-
-```yaml
-version: '3.8'
-
-services:
-  gps-emulator:
-    build: .
-    ports:
-      - "5000:5000"
-    environment:
-      - WEB_HOST=0.0.0.0
-      - WEB_PORT=5000
-    volumes:
-      - ./data:/app/data
-      - ./logs:/app/logs
-    restart: unless-stopped
-```
-
-Run:
-```bash
-docker-compose up -d
 ```
 
 ---

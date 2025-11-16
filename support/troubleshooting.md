@@ -39,14 +39,11 @@ python --version
 py --version
 ```
 
-**Solution (Linux/Mac):**
+**Solution (Linux/Ubuntu):**
 ```bash
 # Ubuntu/Debian
 sudo apt update
 sudo apt install python3 python3-pip
-
-# macOS
-brew install python@3.10
 
 # Verify
 python3 --version
@@ -54,22 +51,84 @@ python3 --version
 
 ---
 
+### Gevent Build Fails (Python 3.13+)
+
+{% hint style="danger" %}
+**Windows + Python 3.13**: This is a known compatibility issue. Use the Windows-specific installation method.
+{% endhint %}
+
+**Problem:**
+```
+error: subprocess-exited-with-error
+undeclared name not builtin: long
+Failed to build 'gevent' when getting requirements to build wheel
+```
+
+**Cause:** Gevent is not compatible with Python 3.13 (uses deprecated `long` type from Python 2)
+
+**Solution (Windows):**
+
+{% hint style="success" %}
+Use `requirements-windows.txt` instead of `requirements.txt`
+{% endhint %}
+
+```cmd
+# Use Windows-specific requirements file
+pip install -r requirements-windows.txt
+
+# This installs Flask-SocketIO in threading mode (no gevent)
+```
+
+**What's different:**
+- ❌ `requirements.txt` - Uses gevent (Linux/production only)
+- ✅ `requirements-windows.txt` - Uses threading mode (Windows compatible)
+
+**See:** [Windows Local Installation Guide](../getting-started/windows-local.md)
+
+**Solution (Linux Production):**
+
+Use Python 3.10 or 3.11 (not 3.13):
+
+```bash
+# Install Python 3.10
+sudo apt install python3.10 python3.10-venv python3-pip
+
+# Create virtual environment with Python 3.10
+python3.10 -m venv venv
+source venv/bin/activate
+
+# Install with gevent
+pip install -r requirements.txt
+```
+
+**See:** [DigitalOcean Production Guide](../getting-started/digitalocean-production.md)
+
+---
+
 ### Pip Install Fails
 
 **Problem:** `pip install -r requirements.txt` fails with errors
 
-**Solution 1 - Upgrade pip:**
+**Solution 1 - Check Python version:**
+```bash
+python --version
+
+# Python 3.13 on Windows? Use requirements-windows.txt instead!
+pip install -r requirements-windows.txt
+```
+
+**Solution 2 - Upgrade pip:**
 ```bash
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-**Solution 2 - Use user directory:**
+**Solution 3 - Use user directory:**
 ```bash
 pip install --user -r requirements.txt
 ```
 
-**Solution 3 - Virtual environment:**
+**Solution 4 - Virtual environment:**
 ```bash
 # Create virtual environment
 python -m venv venv
@@ -77,18 +136,21 @@ python -m venv venv
 # Activate
 # Windows:
 venv\Scripts\activate
-# Linux/Mac:
+# Linux:
 source venv/bin/activate
 
-# Install
+# Install correct requirements file
+# Windows:
+pip install -r requirements-windows.txt
+# Linux:
 pip install -r requirements.txt
 ```
 
-**Solution 4 - Install individually:**
+**Solution 5 - Install individually:**
 ```bash
 # Install packages one by one to find problematic package
-pip install flask==2.3.0
-pip install flask-socketio==5.3.0
+pip install flask==3.0.0
+pip install flask-socketio==5.3.5
 pip install flask-cors==4.0.0
 # ... continue with each package
 ```
@@ -136,6 +198,47 @@ venv\Scripts\activate     # Windows
 # Reinstall requirements
 pip install -r requirements.txt --force-reinstall
 ```
+
+---
+
+---
+
+### WERKZEUG_SERVER_FD Error (Windows)
+
+{% hint style="danger" %}
+**Windows-specific**: This error only occurs on Windows with certain configurations.
+{% endhint %}
+
+**Problem:**
+```
+KeyError: 'WERKZEUG_SERVER_FD'
+at File "werkzeug\serving.py", line 1091, in run_simple
+```
+
+**Cause:** Flask's Werkzeug reloader expects an environment variable that doesn't exist on Windows
+
+**Solution:**
+
+Add to your `.env` file:
+
+```env
+WERKZEUG_RUN_MAIN=false
+```
+
+**Or set via PowerShell:**
+
+```powershell
+(Get-Content .env) -replace 'WERKZEUG_RUN_MAIN=true', 'WERKZEUG_RUN_MAIN=false' | Set-Content .env
+```
+
+**Restart application:**
+
+```cmd
+venv\Scripts\activate.bat
+python app.py
+```
+
+**See:** [Windows Local Installation Guide](../getting-started/windows-local.md#troubleshooting)
 
 ---
 
