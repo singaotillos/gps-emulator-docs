@@ -240,7 +240,7 @@ For questions about changes or upgrade assistance:
 
 ## Contributors
 
-- Lead Developer: AYOUB LMAIMOUNI
+- Lead Developer: **AYOUB LMAIMOUNI**
 
 ---
 
