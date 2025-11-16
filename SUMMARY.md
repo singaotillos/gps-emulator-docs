@@ -47,7 +47,6 @@
 * [Security Settings](advanced/security-settings.md)
 * [Multiple Instances](advanced/multiple-instances.md)
 * [CI/CD Integration](advanced/ci-cd-integration.md)
-* [Production Deployment](advanced/production-deployment.md)
 
 ## Support
 
