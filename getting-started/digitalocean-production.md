@@ -263,7 +263,7 @@ nano .env
 # TRACCAR SERVER CONFIGURATION
 # ----------------------------------------------------------------------------
 TRACCAR_SERVER=http://YOUR_TRACCAR_IP:8082
-TRACCAR_USERNAME=admin
+TRACCAR_USERNAME=gsp_emulators@admin.com
 TRACCAR_PASSWORD=admin
 TRACCAR_AUTO_CREATE_DEVICES=true
 
