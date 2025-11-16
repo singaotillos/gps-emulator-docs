@@ -46,7 +46,6 @@
 * [Performance Tuning](advanced/performance-tuning.md)
 * [Security Settings](advanced/security-settings.md)
 * [Multiple Instances](advanced/multiple-instances.md)
-* [CI/CD Integration](advanced/ci-cd-integration.md)
 
 ## Support
 
