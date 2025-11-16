@@ -8,6 +8,10 @@ Complete step-by-step installation guide for both deployment versions.
 
 The GPS Emulator is available in **two versions** optimized for different use cases:
 
+{% hint style="info" %}
+**Not sure which version to choose?** See our detailed [Version Comparison Guide](version-comparison.md)
+{% endhint %}
+
 ### 🖥️ Windows Local (Development)
 
 {% hint style="info" %}
@@ -40,6 +44,12 @@ The GPS Emulator is available in **two versions** optimized for different use ca
 
 {% content-ref url="digitalocean-production.md" %}
 [digitalocean-production.md](digitalocean-production.md)
+{% endcontent-ref %}
+
+---
+
+{% content-ref url="version-comparison.md" %}
+[version-comparison.md](version-comparison.md)
 {% endcontent-ref %}
 
 ---

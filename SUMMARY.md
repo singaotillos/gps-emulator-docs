@@ -5,8 +5,9 @@
 ## Getting Started
 
 * [Installation](getting-started/installation.md)
-  * [Windows Local Installation](getting-started/windows-local.md)
-  * [DigitalOcean Production](getting-started/digitalocean-production.md)
+  * [📊 Version Comparison](getting-started/version-comparison.md)
+  * [🖥️ Windows Local Installation](getting-started/windows-local.md)
+  * [🌐 DigitalOcean Production](getting-started/digitalocean-production.md)
 * [Quick Start](getting-started/quick-start.md)
 * [System Requirements](getting-started/system-requirements.md)
 * [Remote Server Deployment](getting-started/remote-deployment.md)
@@ -44,7 +45,6 @@
 
 * [Performance Tuning](advanced/performance-tuning.md)
 * [Security Settings](advanced/security-settings.md)
-* [Docker Deployment](advanced/docker.md)
 * [Multiple Instances](advanced/multiple-instances.md)
 * [CI/CD Integration](advanced/ci-cd-integration.md)
 * [Production Deployment](advanced/production-deployment.md)

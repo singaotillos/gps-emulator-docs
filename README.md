@@ -7,6 +7,44 @@
 
 ---
 
+## 🎯 Two Versions Available
+
+This GPS Emulator comes in **two optimized versions** to fit your needs:
+
+### 🖥️ **Windows Local Version** - Development & Testing
+
+Perfect for local development and testing on Windows:
+
+- ✅ **Platform**: Windows 10/11
+- ✅ **Python**: 3.13+ (latest Python support)
+- ✅ **Server**: Flask development server (threading mode)
+- ✅ **Access**: Localhost only (127.0.0.1)
+- ✅ **Setup**: One-click installation with `install.bat`
+- ✅ **Use Case**: Development, testing, learning
+- 📁 **Location**: `/local/` folder
+- 📖 **Guide**: [Windows Local Installation](getting-started/windows-local.md)
+
+### 🌐 **DigitalOcean Production Version** - Production Server
+
+Optimized for production deployment on cloud servers:
+
+- ✅ **Platform**: Ubuntu 22.04/24.04 LTS
+- ✅ **Python**: 3.10-3.11
+- ✅ **Server**: Gunicorn + Gevent (high performance)
+- ✅ **Access**: Public (0.0.0.0)
+- ✅ **Service**: Systemd auto-start on boot
+- ✅ **Use Case**: Production, commercial deployment
+- 📁 **Location**: Root folder (server deployment)
+- 📖 **Guide**: [DigitalOcean Production Deployment](getting-started/digitalocean-production.md)
+
+{% hint style="info" %}
+**Choose Your Version:**
+- **Testing locally on Windows?** → Use the [Windows Local Version](getting-started/windows-local.md)
+- **Deploying to production?** → Use the [DigitalOcean Production Version](getting-started/digitalocean-production.md)
+{% endhint %}
+
+---
+
 ## 🎬 See It In Action
 
 {% hint style="info" %}
@@ -191,14 +229,32 @@ Learning GPS protocols and tracking systems:
 └─────────────────────────────────────────────────────────┘
 ```
 
-**Stack:**
-- **Backend**: Python 3.10-3.13 (Flask 3.0.0, Flask-SocketIO 5.3.5)
+### Technology Stack by Version
+
+#### 🖥️ Windows Local Version
+
+- **Backend**: Python 3.13+, Flask 3.0.0, Flask-SocketIO 5.3.5
+- **Async Mode**: Threading + Eventlet 0.33.3
+- **Server**: Flask development server
 - **Frontend**: HTML5, Bootstrap 5, jQuery, Leaflet.js 1.9.4
 - **Database**: SQLite (vehicle attributes persistence)
 - **API**: RESTful (35+ endpoints) + WebSocket (Socket.IO 4.6.0)
-- **Async**: Eventlet 0.33.3 (Windows), Gunicorn + Gevent (Production)
 - **Protocols**: TCP/UDP/HTTP
-- **Routing**: OSRM (Open Source Routing Machine) for realistic road-based routing
+- **Routing**: OSRM (Open Source Routing Machine)
+- **Dependencies**: `requirements-windows.txt` (no gevent)
+
+#### 🌐 DigitalOcean Production Version
+
+- **Backend**: Python 3.10-3.11, Flask 3.0.0, Flask-SocketIO 5.3.5
+- **Async Mode**: Gevent 24.2.1 (high-performance async I/O)
+- **Server**: Gunicorn 21.2.0 (production WSGI server)
+- **Frontend**: HTML5, Bootstrap 5, jQuery, Leaflet.js 1.9.4
+- **Database**: SQLite (vehicle attributes persistence)
+- **API**: RESTful (35+ endpoints) + WebSocket (Socket.IO 4.6.0)
+- **Protocols**: TCP/UDP/HTTP
+- **Routing**: OSRM (Open Source Routing Machine)
+- **Service**: Systemd (auto-start on boot)
+- **Dependencies**: `requirements.txt` (includes gevent)
 - **Configuration**: YAML/JSON with hot-reload support (watchdog)
 
 ### Performance
@@ -220,13 +276,16 @@ Learning GPS protocols and tracking systems:
 
 <!-- PLACEHOLDER: Step-by-step visual guide -->
 
-### Step 1: Install & Launch
+Choose your installation path based on your needs:
 
-<!-- PLACEHOLDER: Screenshot - Installation complete -->
-```bash
-pip install -r requirements.txt
-python app.py
-```
+### 🖥️ Quick Start - Windows Local
+
+#### Step 1: Install & Launch
+
+1. Extract the ZIP file to `C:\universal-gps-emulator_digitalocean\local\`
+2. Double-click: **`install.bat`**
+3. Wait 2-3 minutes for automatic installation
+4. Double-click: **`start.bat`**
 
 **Expected output:**
 ```
@@ -236,17 +295,56 @@ python app.py
 ⚡ Ready to simulate GPS devices!
 ```
 
+**Access**: http://localhost:5000
+
+📖 **Full Guide**: [Windows Local Installation](getting-started/windows-local.md)
+
+---
+
+### 🌐 Quick Start - DigitalOcean Production
+
+#### Step 1: Install & Launch
+
+```bash
+# SSH to your server
+ssh root@YOUR_SERVER_IP
+
+# Upload and extract files
+cd /opt
+# ... upload files ...
+
+# Run installation script
+chmod +x install.sh
+sudo ./install.sh
+
+# Service starts automatically
+sudo systemctl status gps-emulator
+```
+
+**Expected output:**
+```
+✅ Universal GPS Tracker Emulator v5.0
+🌐 Dashboard: http://YOUR_SERVER_IP:5000
+🔌 87 protocols loaded
+⚡ Service: active (running)
+```
+
+**Access**: http://YOUR_SERVER_IP:5000
+
+📖 **Full Guide**: [DigitalOcean Production Deployment](getting-started/digitalocean-production.md)
+
 ---
 
 ### Step 2: Create Your First Device
 
 ![Create Device](/.gitbook/assets/gifs/create_your_first_device.gif)
 
-**Quick creation via UI:**
-1. Select protocol (e.g., TK103)
-2. Choose device model
-3. Select route (Paris, London, NYC, etc.)
-4. Click "Add Device"
+**Quick creation via Web UI** (both versions):
+1. Open browser to dashboard (http://localhost:5000 or http://YOUR_SERVER_IP:5000)
+2. Select protocol (e.g., TK103)
+3. Choose device model
+4. Select route (Paris, London, NYC, etc.)
+5. Click "Add Device"
 
 **Or use the API:**
 
@@ -489,15 +587,46 @@ Debug protocol implementations:
 Ready to revolutionize your GPS testing workflow?
 
 {% hint style="success" %}
-**No GPS hardware required • Works with Traccar • 86+ protocols • Full source code**
+**No GPS hardware required • Works with Traccar • 87+ protocols • Full source code • Two versions available**
 {% endhint %}
+
+### ⚙️ Which Version Should You Choose?
+
+| Question | Answer | Recommended Version |
+|----------|--------|---------------------|
+| Testing on Windows PC? | Local development | 🖥️ [Windows Local](getting-started/windows-local.md) |
+| Need Python 3.13 support? | Latest Python version | 🖥️ [Windows Local](getting-started/windows-local.md) |
+| Learning GPS protocols? | Simple setup | 🖥️ [Windows Local](getting-started/windows-local.md) |
+| Deploying for production? | Cloud server | 🌐 [DigitalOcean Production](getting-started/digitalocean-production.md) |
+| Need 24/7 availability? | Auto-start service | 🌐 [DigitalOcean Production](getting-started/digitalocean-production.md) |
+| Maximum performance? | Gevent async I/O | 🌐 [DigitalOcean Production](getting-started/digitalocean-production.md) |
+| 100+ concurrent devices? | Production server | 🌐 [DigitalOcean Production](getting-started/digitalocean-production.md) |
 
 ### Quick Steps:
 
-1. **Purchase and download** the package
-2. **Install** following our [Installation Guide](getting-started/installation.md)
-3. **Launch** and create your first device
-4. **Start testing** your GPS applications!
+#### 🖥️ For Windows Local:
+
+1. **Extract** the ZIP to `/local/` folder
+2. **Run** `install.bat` for automatic setup
+3. **Start** with `start.bat`
+4. **Access** http://localhost:5000
+
+{% content-ref url="getting-started/windows-local.md" %}
+[windows-local.md](getting-started/windows-local.md)
+{% endcontent-ref %}
+
+#### 🌐 For DigitalOcean Production:
+
+1. **Create** Ubuntu droplet on DigitalOcean
+2. **Upload** files to `/opt/gps-emulator/`
+3. **Run** `install.sh` for automatic setup
+4. **Access** http://YOUR_SERVER_IP:5000
+
+{% content-ref url="getting-started/digitalocean-production.md" %}
+[digitalocean-production.md](getting-started/digitalocean-production.md)
+{% endcontent-ref %}
+
+---
 
 {% content-ref url="getting-started/quick-start.md" %}
 [quick-start.md](getting-started/quick-start.md)
@@ -526,22 +655,62 @@ Ready to revolutionize your GPS testing workflow?
 
 ---
 
-## 📋 System Requirements
+## 📋 System Requirements by Version
 
-### Windows Local (Development)
-- **OS**: Windows 10/11
-- **Python**: 3.10 - 3.13+
-- **RAM**: 2 GB minimum, 4 GB recommended
+### 🖥️ Windows Local Version (Development)
+
+**Minimum Requirements:**
+- **OS**: Windows 10/11 (64-bit)
+- **Python**: 3.13+ (latest version supported)
+- **RAM**: 2 GB
 - **Storage**: 500 MB
 - **Network**: Localhost (127.0.0.1)
+- **Dependencies**: `requirements-windows.txt`
 
-### DigitalOcean Production (Server)
-- **OS**: Ubuntu 22.04/24.04 LTS
+**Recommended for 50+ devices:**
+- **RAM**: 4 GB
+- **Storage**: 1 GB
+- **Network**: Ethernet connection
+
+**Installation:**
+- One-click setup with `install.bat`
+- No system service required
+- Manual start with `start.bat`
+
+{% content-ref url="getting-started/windows-local.md" %}
+[windows-local.md](getting-started/windows-local.md)
+{% endcontent-ref %}
+
+---
+
+### 🌐 DigitalOcean Production Version (Server)
+
+**Minimum Requirements:**
+- **OS**: Ubuntu 22.04 or 24.04 LTS
 - **Python**: 3.10 - 3.11
-- **RAM**: 2 GB minimum, 4 GB+ recommended
-- **Storage**: 10 GB SSD minimum, 20 GB recommended
-- **CPU**: 1 vCPU minimum, 2 vCPU recommended
-- **Network**: Public access (0.0.0.0)
+- **RAM**: 2 GB
+- **CPU**: 1 vCPU
+- **Storage**: 10 GB SSD
+- **Network**: Public IP with 0.0.0.0 binding
+- **Dependencies**: `requirements.txt` (includes gevent)
+
+**Recommended for 50+ devices:**
+- **RAM**: 4 GB+
+- **CPU**: 2 vCPUs
+- **Storage**: 20 GB SSD
+- **Network**: 100 Mbps+ bandwidth
+
+**Installation:**
+- Automated setup with `install.sh`
+- Systemd service (auto-start on boot)
+- Gunicorn + Gevent for production performance
+- Optional: Nginx reverse proxy + SSL
+
+{% content-ref url="getting-started/digitalocean-production.md" %}
+[digitalocean-production.md](getting-started/digitalocean-production.md)
+{% endcontent-ref %}
+
+---
 
 {% content-ref url="getting-started/system-requirements.md" %}
 [system-requirements.md](getting-started/system-requirements.md)
