@@ -74,42 +74,60 @@ Works on any OS with Docker support.
 
 ### Python
 
-**Required:** Python 3.8 or newer
+{% hint style="warning" %}
+**Important:** Python version requirements differ between deployment versions!
+{% endhint %}
 
 {% tabs %}
-{% tab title="Check Version" %}
-```bash
-# Check Python version
-python --version
-# or
-python3 --version
+{% tab title="🖥️ Windows Local" %}
+### Windows Local Version
 
-# Should output: Python 3.8.x or higher
-```
-{% endtab %}
+**Required:** Python 3.13 or newer
 
-{% tab title="Install Python" %}
-**Windows:**
+**Why Python 3.13?**
+- Uses threading-based concurrency
+- Compatible with Flask's built-in development server
+- No gevent dependency (which doesn't support Python 3.13+)
+- Uses `requirements-windows.txt`
+
+**Install Python 3.13:**
 1. Download from [python.org](https://www.python.org/downloads/)
 2. Run installer
 3. ✅ CHECK "Add Python to PATH"
 
-**Linux (Ubuntu/Debian):**
+**Check version:**
 ```bash
-sudo apt update
-sudo apt install python3 python3-pip python3-venv
-```
-
-**macOS:**
-```bash
-brew install python@3.11
+python --version
+# Should output: Python 3.13.x
 ```
 {% endtab %}
-{% endtabs %}
 
-{% hint style="success" %}
-**Recommended:** Python 3.10 or 3.11 for best performance
-{% endhint %}
+{% tab title="🌐 DigitalOcean Production" %}
+### DigitalOcean Production Version
+
+**Required:** Python 3.10 or 3.11
+
+**Why Python 3.10-3.11?**
+- Uses gevent for high-performance async operations
+- Gevent currently supports Python 3.10 and 3.11
+- Uses Gunicorn with gevent workers
+- Uses `requirements.txt`
+
+**Install Python (Ubuntu/Debian):**
+```bash
+sudo apt update
+sudo apt install python3.11 python3.11-pip python3.11-venv
+```
+
+**Check version:**
+```bash
+python3 --version
+# Should output: Python 3.10.x or 3.11.x
+```
+
+**Recommended:** Python 3.11 for best performance
+{% endtab %}
+{% endtabs %}
 
 ---
 
@@ -268,14 +286,27 @@ WEB_PORT=5000  # Change to avoid conflicts
 
 ### Python Version Compatibility
 
+{% tabs %}
+{% tab title="🖥️ Windows Local" %}
 | Python | Status | Notes |
 |--------|--------|-------|
-| 3.11 | ✅ Recommended | Best performance |
-| 3.10 | ✅ Recommended | Stable |
-| 3.9 | ✅ Supported | Fully supported |
-| 3.8 | ✅ Supported | Minimum version |
-| 3.7 | ⚠️ Not tested | May work |
-| 3.6 | ❌ Not supported | Too old |
+| 3.13 | ✅ Required | Uses threading mode |
+| 3.14+ | ✅ Should work | Future versions |
+| 3.12 | ⚠️ May work | Not tested |
+| 3.11 | ❌ Not compatible | Use Production version instead |
+| 3.10 | ❌ Not compatible | Use Production version instead |
+{% endtab %}
+
+{% tab title="🌐 DigitalOcean Production" %}
+| Python | Status | Notes |
+|--------|--------|-------|
+| 3.11 | ✅ Recommended | Best performance with gevent |
+| 3.10 | ✅ Recommended | Stable with gevent |
+| 3.9 | ⚠️ May work | Gevent support limited |
+| 3.8 | ⚠️ Not tested | May work |
+| 3.13+ | ❌ Not compatible | Gevent doesn't support yet |
+{% endtab %}
+{% endtabs %}
 
 ---
 

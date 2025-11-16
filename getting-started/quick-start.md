@@ -2,6 +2,10 @@
 
 Get your first GPS device running in under 5 minutes!
 
+{% hint style="info" %}
+**Works with both versions:** This guide applies to both the 🖥️ Windows Local and 🌐 DigitalOcean Production versions. The web interface and features are identical.
+{% endhint %}
+
 ---
 
 ## Prerequisites
@@ -9,7 +13,7 @@ Get your first GPS device running in under 5 minutes!
 Before starting, ensure you have:
 
 * ✅ Installed the emulator ([Installation Guide](installation.md))
-* ✅ Emulator running at http://localhost:5000
+* ✅ Emulator running at http://localhost:5000 (or http://YOUR_SERVER_IP:5000 for production)
 * ✅ (Optional) Traccar server running
 
 ---

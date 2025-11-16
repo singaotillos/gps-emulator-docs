@@ -1053,16 +1053,20 @@ python app.py
 
 ## Examples
 
-### Example 1: Development Setup
+### Example 1: Windows Local Development
 
-**Scenario:** Local development, fast iterations, detailed logging
+**Scenario:** 🖥️ Windows Local Version - Local development, fast iterations, detailed logging
 
 ```bash
-# .env
+# .env for Windows Local Version
 WEB_HOST=127.0.0.1
 WEB_PORT=5000
 WEB_DEBUG=true
 WEB_THEME=light
+
+# Threading mode (Windows Local specific)
+WERKZEUG_RUN_MAIN=false
+WORKER_CLASS=sync
 
 API_ENABLE_AUTHENTICATION=false
 API_ENABLE_CORS=true
@@ -1082,17 +1086,25 @@ UGTE_LICENSE_KEY=
 UGTE_CE_DEVICE_LIMIT=5
 ```
 
+{% hint style="info" %}
+**Windows Local Version:** Uses Python 3.13+ with threading-based concurrency and Flask development server. Install dependencies with `requirements-windows.txt`.
+{% endhint %}
+
 ---
 
-### Example 2: Production Server
+### Example 2: DigitalOcean Production Server
 
-**Scenario:** Production deployment, 50 devices, secure
+**Scenario:** 🌐 DigitalOcean Production Version - Production deployment, 50 devices, secure
 
 ```bash
-# .env
+# .env for DigitalOcean Production Version
 WEB_HOST=0.0.0.0
 WEB_PORT=5000
 WEB_DEBUG=false
+
+# Gevent mode (Production specific)
+WORKER_CLASS=gevent
+WORKERS=4
 
 API_ENABLE_AUTHENTICATION=true
 API_KEY=7f9a8b6c5d4e3f2a1b0c9d8e7f6a5b4c3d2e1f0a9b8c7d6e5f4a3b2c1d0e9f8
@@ -1122,8 +1134,12 @@ ADVANCED_MAX_CONCURRENT_EMULATORS=50
 ADVANCED_PERFORMANCE_MODE=balanced
 ADVANCED_AUTO_RESTART_ON_CRASH=true
 
-UGTE_LICENSE_KEY=EE-XXXX-XXXX-XXXX-XXXX
+UGTE_LICENSE_KEY=EXT-XXXX-XXXX-XXXX-XXXX
 ```
+
+{% hint style="success" %}
+**DigitalOcean Production Version:** Uses Python 3.10-3.11 with Gunicorn + gevent workers for high performance. Install dependencies with `requirements.txt`.
+{% endhint %}
 
 ---
 

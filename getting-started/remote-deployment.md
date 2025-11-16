@@ -1,4 +1,10 @@
-# Remote Server Deployment
+# Remote Server Deployment (Production Version)
+
+{% hint style="warning" %}
+**This guide is for the 🌐 DigitalOcean Production Version only**
+
+Requires Linux server with Python 3.10-3.11. For Windows Local deployment, see [Windows Local Installation](windows-local.md).
+{% endhint %}
 
 Complete guide for deploying Universal GPS Tracker Emulator on a remote server (VPS, Cloud, Dedicated Server).
 
@@ -6,14 +12,15 @@ Complete guide for deploying Universal GPS Tracker Emulator on a remote server (
 
 ## Overview
 
-The GPS Emulator can be deployed on remote servers for:
-- **Production use** - 24/7 availability
+The DigitalOcean Production Version can be deployed on remote Linux servers for:
+- **Production use** - 24/7 availability with Gunicorn + gevent
 - **Team access** - Multiple users accessing the same instance
 - **Client demonstrations** - Professional hosting
 - **Integration testing** - Continuous testing environments
+- **High performance** - Handle 50+ concurrent devices
 
 {% hint style="info" %}
-**Local vs Remote**: The application works identically in both modes. Only the network configuration changes.
+**Requirements**: Linux VPS with Python 3.10 or 3.11, systemd support, and ability to open custom ports (5000-5232).
 {% endhint %}
 
 ---

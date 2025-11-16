@@ -126,16 +126,21 @@ Done! Continue to [Post-Installation](#post-installation) for configuration.
 
 ## Detailed Installation
 
-### Windows Installation
+### 🖥️ Windows Installation (Windows Local Version)
+
+{% hint style="info" %}
+**This section is for the Windows Local Version** - Requires Python 3.13+
+{% endhint %}
 
 #### Prerequisites
 
-1. **Python 3.8 or higher**
+1. **Python 3.13 or higher**
    - Download from: https://www.python.org/downloads/
    - During installation, **check "Add Python to PATH"**
    - Verify installation:
      ```cmd
      python --version
+     # Should show: Python 3.13.x
      ```
 
 2. **Extract the Archive**
@@ -188,21 +193,29 @@ Done! Continue to [Post-Installation](#post-installation) for configuration.
 
 ---
 
-### Linux Installation
+### 🌐 Linux Installation (DigitalOcean Production Version)
+
+{% hint style="success" %}
+**This section is for the DigitalOcean Production Version** - Requires Python 3.10 or 3.11
+{% endhint %}
 
 #### Prerequisites
 
-1. **Python 3.8+**
+1. **Python 3.10 or 3.11**
    ```bash
-   # Ubuntu/Debian
+   # Ubuntu/Debian (Python 3.11)
    sudo apt update
-   sudo apt install python3 python3-pip python3-venv
+   sudo apt install python3.11 python3.11-pip python3.11-venv
+
+   # Ubuntu 20.04 (Python 3.10)
+   sudo apt install python3.10 python3.10-pip python3.10-venv
 
    # CentOS/RHEL
-   sudo yum install python3 python3-pip
+   sudo yum install python3.11 python3.11-pip
 
-   # Arch Linux
-   sudo pacman -S python python-pip
+   # Verify version
+   python3 --version
+   # Should show: Python 3.10.x or 3.11.x
    ```
 
 2. **Extract Archive**
