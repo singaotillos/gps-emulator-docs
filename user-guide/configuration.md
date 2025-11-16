@@ -1277,7 +1277,7 @@ taskkill /PID <PID> /F
 - See [TROUBLESHOOTING.md](TROUBLESHOOTING.md) for more issues
 - Check [FAQ.md](FAQ.md) for common questions
 - Review [INSTALLATION.md](INSTALLATION.md) for setup help
-- Contact: support@your-domain.com
+- Contact: singaotillos@gmail.com
 
 ---
 

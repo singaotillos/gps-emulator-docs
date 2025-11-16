@@ -436,7 +436,7 @@ docker rmi gps-emulator
 
 - Check [Troubleshooting Guide](../support/troubleshooting.md)
 - Read [FAQ](../support/faq.md)
-- Email: support@your-domain.com
+- Email: singaotillos@gmail.com
 - Response time: 24-48 hours
 
 ---

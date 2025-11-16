@@ -233,7 +233,7 @@ This is the first public release optimized for CodeCanyon marketplace.
 ## Support
 
 For questions about changes or upgrade assistance:
-- Email: support@your-domain.com
+- Email: singaotillos@gmail.com
 - Documentation: See INSTALLATION.md and CONFIGURATION.md
 
 ---

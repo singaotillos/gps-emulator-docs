@@ -255,7 +255,7 @@ The Universal GPS Tracker Emulator is available under **two license types**:
 - Get Extended License benefits immediately
 - Existing support/updates time preserved
 
-**Contact:** support@your-domain.com
+**Contact:** singaotillos@gmail.com
 
 ### Renew Support/Updates
 
@@ -290,7 +290,7 @@ The Universal GPS Tracker Emulator is available under **two license types**:
 - ❌ Purchased wrong license type
 
 **To request refund:**
-- Email: support@your-domain.com
+- Email: singaotillos@gmail.com
 - Include: Order number, reason
 - Response time: 24-48 hours
 
@@ -409,15 +409,15 @@ https://yourwebsite.com
 ## Contact & Support
 
 **License Questions:**
-- Email: sales@your-domain.com
+- Email: singaotillos@gmail.com
 - Response time: 24 hours
 
 **Technical Support:**
-- Email: support@your-domain.com
+- Email: singaotillos@gmail.com
 - Include: License key, issue description
 
 **Upgrade/Renewal:**
-- Email: sales@your-domain.com
+- Email: singaotillos@gmail.com
 - Subject: "License Upgrade" or "Renewal"
 
 ---

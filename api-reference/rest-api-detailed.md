@@ -1726,7 +1726,7 @@ Create a file `gps-emulator-api.postman_collection.json`:
 For API questions or issues:
 - Check [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
 - Review [FAQ.md](FAQ.md)
-- Email: support@your-domain.com
+- Email: singaotillos@gmail.com
 - Response time: 24-48 hours
 
 ---

@@ -6,7 +6,7 @@ Get in touch with us.
 
 ## Support
 
-**Email:** support@your-domain.com
+**Email:** singaotillos@gmail.com
 **Hours:** Monday-Friday, 9 AM - 5 PM UTC
 **Response time:** 24-48 hours
 
@@ -14,7 +14,7 @@ Get in touch with us.
 
 ## Sales
 
-**Email:** sales@your-domain.com
+**Email:** singaotillos@gmail.com
 **For:** License upgrades, bulk purchases
 
 ---

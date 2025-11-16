@@ -363,7 +363,7 @@ All protocols are compatible with:
 ## 📞 Need Help?
 
 - **Protocol not working?** Check TROUBLESHOOTING.md
-- **Custom protocol?** Contact support@your-domain.com
+- **Custom protocol?** Contact singaotillos@gmail.com
 - **Integration help?** See CONFIGURATION.md
 
 ---

@@ -1267,7 +1267,7 @@ curl -X POST http://localhost:5000/api/traccar/test
 
 ### Contact Support
 
-**Email:** support@your-domain.com
+**Email:** singaotillos@gmail.com
 
 **Include:**
 - Description of problem

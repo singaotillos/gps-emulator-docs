@@ -12,7 +12,7 @@ Join the GPS Emulator community.
 - Troubleshooting guide
 
 ### Support Email
-**Email:** support@your-domain.com
+**Email:** singaotillos@gmail.com
 **Response time:** 24-48 hours
 
 ---
@@ -32,7 +32,7 @@ Join the GPS Emulator community.
 ## Feature Requests
 
 Have an idea? Let us know!
-**Email:** support@your-domain.com
+**Email:** singaotillos@gmail.com
 
 ---
 

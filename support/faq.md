@@ -366,7 +366,7 @@ rm /tmp/osmand_gps_emulator.lock
 
 ### 📧 Contact Support
 
-- **Email:** support@your-domain.com
+- **Email:** singaotillos@gmail.com
 - **Response time:** 24-48 hours (business days)
 - **Include:**
   - Error messages
