@@ -240,8 +240,7 @@ For questions about changes or upgrade assistance:
 
 ## Contributors
 
-- Lead Developer: [Your Name]
-- Contributors: [List if applicable]
+- Lead Developer: AYOUB LMAIMOUNI
 
 ---
 

@@ -27,10 +27,4 @@ Protocol implementations based on:
 
 ---
 
-## Contributors
-
-Thank you to all contributors!
-
----
-
 *Last updated: October 2025*
