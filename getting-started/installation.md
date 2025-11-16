@@ -54,31 +54,21 @@ The GPS Emulator is available in **two versions** optimized for different use ca
 
 ---
 
-## Quick Comparison
+## Need More Details?
 
-| Feature | Windows Local | DigitalOcean Production |
-|---------|--------------|------------------------|
-| **Platform** | Windows 10/11 | Ubuntu 22.04/24.04 |
-| **Python** | 3.10 - 3.13+ | 3.10 - 3.11 |
-| **Setup** | `install.bat` | `install.sh` |
-| **Start** | `start.bat` | `systemctl start` |
-| **Async** | Threading | Gevent |
-| **Server** | Flask dev | Gunicorn |
-| **Access** | Localhost | Network/Internet |
-| **Auto-start** | No | Yes (systemd) |
-| **Use Case** | Development | Production |
+For detailed comparison of both versions, see:
+
+{% content-ref url="version-comparison.md" %}
+[version-comparison.md](version-comparison.md)
+{% endcontent-ref %}
 
 ---
 
 ## Table of Contents
 
 - [Quick Installation](#quick-installation)
-- [Detailed Installation](#detailed-installation)
-  - [Windows](#windows-installation)
-  - [Linux/Ubuntu](#linux-installation)
 - [Post-Installation](#post-installation)
-- [Troubleshooting](#troubleshooting)
-- [Uninstallation](#uninstallation)
+- [Next Steps](#next-steps)
 
 ---
 
@@ -120,164 +110,14 @@ sudo ./install.sh
 # http://YOUR_SERVER_IP:5000
 ```
 
-Done! Continue to [Post-Installation](#post-installation) for configuration.
-
----
-
-## Detailed Installation
-
-### 🖥️ Windows Installation (Windows Local Version)
-
-{% hint style="info" %}
-**This section is for the Windows Local Version** - Requires Python 3.13+
-{% endhint %}
-
-#### Prerequisites
-
-1. **Python 3.13 or higher**
-   - Download from: https://www.python.org/downloads/
-   - During installation, **check "Add Python to PATH"**
-   - Verify installation:
-     ```cmd
-     python --version
-     # Should show: Python 3.13.x
-     ```
-
-2. **Extract the Archive**
-   - Right-click `universal-gps-emulator.zip`
-   - Select "Extract All..."
-   - Choose destination folder
-
-#### Installation Steps
-
-1. **Open Command Prompt**
-   - Press `Win + R`
-   - Type `cmd` and press Enter
-   - Navigate to extracted folder:
-     ```cmd
-     cd C:\Users\YourName\Downloads\universal-gps-emulator
-     ```
-
-2. **Install Dependencies**
-
-   {% hint style="danger" %}
-   **CRITICAL**: Windows users must use `requirements-windows.txt` (NOT `requirements.txt`)!
-   {% endhint %}
-
-   ```cmd
-   pip install -r requirements-windows.txt
-   ```
-
-   If you get an error, try:
-   ```cmd
-   python -m pip install --upgrade pip
-   python -m pip install -r requirements-windows.txt
-   ```
-
-3. **Configure Application (Optional)**
-   ```cmd
-   copy .env.example .env
-   notepad .env
-   ```
-   Edit configuration as needed (see [Configuration Guide](../user-guide/configuration.md))
-
-4. **Start Application**
-   ```cmd
-   python app.py
-   ```
-
-5. **Access Web Interface**
-   - Open browser
-   - Go to: http://localhost:5000
-   - You should see the dashboard!
-
----
-
-### 🌐 Linux Installation (DigitalOcean Production Version)
-
 {% hint style="success" %}
-**This section is for the DigitalOcean Production Version** - Requires Python 3.10 or 3.11
+**Installation complete!** Continue to [Post-Installation](#post-installation) for next steps.
 {% endhint %}
 
-#### Prerequisites
+**Need detailed installation steps?**
 
-1. **Python 3.10 or 3.11**
-   ```bash
-   # Ubuntu/Debian (Python 3.11)
-   sudo apt update
-   sudo apt install python3.11 python3.11-pip python3.11-venv
-
-   # Ubuntu 20.04 (Python 3.10)
-   sudo apt install python3.10 python3.10-pip python3.10-venv
-
-   # CentOS/RHEL
-   sudo yum install python3.11 python3.11-pip
-
-   # Verify version
-   python3 --version
-   # Should show: Python 3.10.x or 3.11.x
-   ```
-
-2. **Extract Archive**
-   ```bash
-   unzip universal-gps-emulator.zip
-   cd universal-gps-emulator
-   ```
-
-#### Installation Steps
-
-1. **Create Virtual Environment (Recommended)**
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate
-   ```
-
-2. **Install Dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Configure Application**
-   ```bash
-   cp .env.example .env
-   nano .env  # or vim, gedit, etc.
-   ```
-
-4. **Start Application**
-   ```bash
-   python app.py
-   ```
-
-5. **Access Web Interface**
-   Open browser: http://localhost:5000
-
-#### Run as System Service (Optional)
-
-Create `/etc/systemd/system/gps-emulator.service`:
-
-```ini
-[Unit]
-Description=GPS Tracker Emulator
-After=network.target
-
-[Service]
-Type=simple
-User=youruser
-WorkingDirectory=/path/to/universal-gps-emulator
-Environment="PATH=/path/to/venv/bin"
-ExecStart=/path/to/venv/bin/python app.py
-Restart=always
-
-[Install]
-WantedBy=multi-user.target
-```
-
-Enable and start:
-```bash
-sudo systemctl enable gps-emulator
-sudo systemctl start gps-emulator
-sudo systemctl status gps-emulator
-```
+- **Windows Users:** See the complete [Windows Local Installation Guide](windows-local.md)
+- **Linux/Server Users:** See the complete [DigitalOcean Production Guide](digitalocean-production.md)
 
 ---
 
@@ -324,115 +164,18 @@ If you have Traccar installed:
 
 ## Troubleshooting
 
-### "Python not found"
+Having issues during installation? See our comprehensive troubleshooting guide:
 
-**Windows:**
-- Reinstall Python
-- Check "Add to PATH" during installation
+{% content-ref url="../support/troubleshooting.md" %}
+[troubleshooting.md](../support/troubleshooting.md)
+{% endcontent-ref %}
 
-**Linux/Mac:**
-```bash
-sudo apt install python3  # Ubuntu
-brew install python@3.10  # macOS
-```
-
-### "Permission denied"
-
-**Linux/Mac:**
-```bash
-chmod +x app.py
-sudo chown -R $USER:$USER .
-```
-
-### "Port 5000 already in use"
-
-Change port in `.env`:
-```
-WEB_PORT=5001
-```
-
-Or kill process using port:
-```bash
-# Linux/Mac
-lsof -ti:5000 | xargs kill -9
-
-# Windows
-netstat -ano | findstr :5000
-taskkill /PID <PID> /F
-```
-
-### "Module not found"
-
-Reinstall dependencies:
-```bash
-pip install --upgrade pip
-pip install -r requirements.txt --force-reinstall
-```
-
-### "Database locked"
-
-Stop all instances:
-```bash
-# Linux/Mac
-pkill -f app.py
-
-# Windows
-taskkill /IM python.exe /F
-```
-
-Delete lock file:
-```bash
-rm /tmp/osmand_gps_emulator.lock
-```
-
-### Dependencies Installation Fails
-
-Try with `--user` flag:
-```bash
-pip install --user -r requirements.txt
-```
-
-Or create virtual environment:
-```bash
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-venv\Scripts\activate     # Windows
-pip install -r requirements.txt
-```
-
----
-
-## Uninstallation
-
-### Windows
-
-1. Stop application (Ctrl+C in command prompt)
-2. Delete installation folder
-3. Delete virtual environment (if created)
-
-### Linux/Mac
-
-```bash
-# Stop service (if installed)
-sudo systemctl stop gps-emulator
-sudo systemctl disable gps-emulator
-sudo rm /etc/systemd/system/gps-emulator.service
-
-# Remove files
-cd ..
-rm -rf universal-gps-emulator
-
-# Remove virtual environment
-rm -rf venv
-```
-
-### Docker
-
-```bash
-docker stop gps-emulator
-docker rm gps-emulator
-docker rmi gps-emulator
-```
+**Common issues:**
+- **Python not found** → [Solution](../support/troubleshooting.md#python-not-found)
+- **Port already in use** → [Solution](../support/troubleshooting.md#port-already-in-use)
+- **Module not found** → [Solution](../support/troubleshooting.md#module-not-found)
+- **Gevent build fails** → [Solution](../support/troubleshooting.md#gevent-build-fails-python-313)
+- **Permission denied** → [Solution](../support/troubleshooting.md#permission-denied)
 
 ---
 

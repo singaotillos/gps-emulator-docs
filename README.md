@@ -11,39 +11,22 @@
 
 ## 🎯 Two Versions Available
 
-This GPS Emulator comes in **two optimized versions** to fit your needs:
+Choose the version that fits your needs:
 
-### 🖥️ **Windows Local Version** - Development & Testing
-
-Perfect for local development and testing on Windows:
-
-- ✅ **Platform**: Windows 10/11
-- ✅ **Python**: 3.13+ (latest Python support)
-- ✅ **Server**: Flask development server (threading mode)
-- ✅ **Access**: Localhost only (127.0.0.1)
-- ✅ **Setup**: One-click installation with `install.bat`
-- ✅ **Use Case**: Development, testing, learning
-- 📁 **Location**: `/local/` folder
-- 📖 **Guide**: [Windows Local Installation](getting-started/windows-local.md)
-
-### 🌐 **DigitalOcean Production Version** - Production Server
-
-Optimized for production deployment on cloud servers:
-
-- ✅ **Platform**: Ubuntu 22.04/24.04 LTS
-- ✅ **Python**: 3.10-3.11
-- ✅ **Server**: Gunicorn + Gevent (high performance)
-- ✅ **Access**: Public (0.0.0.0)
-- ✅ **Service**: Systemd auto-start on boot
-- ✅ **Use Case**: Production, commercial deployment
-- 📁 **Location**: Root folder (server deployment)
-- 📖 **Guide**: [DigitalOcean Production Deployment](getting-started/digitalocean-production.md)
+| | 🖥️ Windows Local | 🌐 DigitalOcean Production |
+|---|---|---|
+| **Best For** | Development & Testing | Production & 24/7 Operation |
+| **Platform** | Windows 10/11 | Ubuntu Linux |
+| **Python** | 3.13+ | 3.10-3.11 |
+| **Setup** | One-click `install.bat` | Automated `install.sh` |
 
 {% hint style="info" %}
-**Choose Your Version:**
-- **Testing locally on Windows?** → Use the [Windows Local Version](getting-started/windows-local.md)
-- **Deploying to production?** → Use the [DigitalOcean Production Version](getting-started/digitalocean-production.md)
+**Need help choosing?** See the complete [Version Comparison Guide](getting-started/version-comparison.md)
 {% endhint %}
+
+**Quick Links:**
+- 📖 [Windows Local Installation Guide](getting-started/windows-local.md)
+- 📖 [DigitalOcean Production Guide](getting-started/digitalocean-production.md)
 
 ---
 
@@ -282,58 +265,26 @@ Choose your installation path based on your needs:
 
 ### 🖥️ Quick Start - Windows Local
 
-#### Step 1: Install & Launch
+**Perfect for:** Local development, testing, and Windows environments
 
-1. Extract the ZIP file to `C:\universal-gps-emulator_digitalocean\local\`
-2. Double-click: **`install.bat`**
-3. Wait 2-3 minutes for automatic installation
-4. Double-click: **`start.bat`**
+**Quick setup:**
+1. Extract ZIP → Run `install.bat` → Run `start.bat`
+2. Access: http://localhost:5000
 
-**Expected output:**
-```
-✅ Universal GPS Tracker Emulator v5.0
-🌐 Dashboard: http://localhost:5000
-🔌 87 protocols loaded
-⚡ Ready to simulate GPS devices!
-```
-
-**Access**: http://localhost:5000
-
-📖 **Full Guide**: [Windows Local Installation](getting-started/windows-local.md)
+📖 **Full Installation Guide**: [Windows Local Installation](getting-started/windows-local.md)
 
 ---
 
 ### 🌐 Quick Start - DigitalOcean Production
 
-#### Step 1: Install & Launch
+**Perfect for:** Production servers, 24/7 operation, team access
 
-```bash
-# SSH to your server
-ssh root@YOUR_SERVER_IP
+**Quick setup:**
+1. Upload to Linux server → Run `install.sh`
+2. Service starts automatically
+3. Access: http://YOUR_SERVER_IP:5000
 
-# Upload and extract files
-cd /opt
-# ... upload files ...
-
-# Run installation script
-chmod +x install.sh
-sudo ./install.sh
-
-# Service starts automatically
-sudo systemctl status gps-emulator
-```
-
-**Expected output:**
-```
-✅ Universal GPS Tracker Emulator v5.0
-🌐 Dashboard: http://YOUR_SERVER_IP:5000
-🔌 87 protocols loaded
-⚡ Service: active (running)
-```
-
-**Access**: http://YOUR_SERVER_IP:5000
-
-📖 **Full Guide**: [DigitalOcean Production Deployment](getting-started/digitalocean-production.md)
+📖 **Full Installation Guide**: [DigitalOcean Production Deployment](getting-started/digitalocean-production.md)
 
 ---
 
@@ -657,62 +608,20 @@ Ready to revolutionize your GPS testing workflow?
 
 ---
 
-## 📋 System Requirements by Version
+## 📋 System Requirements
 
-### 🖥️ Windows Local Version (Development)
+**Quick Reference:**
 
-**Minimum Requirements:**
-- **OS**: Windows 10/11 (64-bit)
-- **Python**: 3.13+ (latest version supported)
-- **RAM**: 2 GB
-- **Storage**: 500 MB
-- **Network**: Localhost (127.0.0.1)
-- **Dependencies**: `requirements-windows.txt`
+| Component | Windows Local | DigitalOcean Production |
+|-----------|---------------|-------------------------|
+| **OS** | Windows 10/11 | Ubuntu 22.04+ |
+| **Python** | 3.13+ | 3.10 - 3.11 |
+| **RAM** | 2-4 GB | 2-4 GB |
+| **Storage** | 500 MB - 1 GB | 10-20 GB |
 
-**Recommended for 50+ devices:**
-- **RAM**: 4 GB
-- **Storage**: 1 GB
-- **Network**: Ethernet connection
-
-**Installation:**
-- One-click setup with `install.bat`
-- No system service required
-- Manual start with `start.bat`
-
-{% content-ref url="getting-started/windows-local.md" %}
-[windows-local.md](getting-started/windows-local.md)
-{% endcontent-ref %}
-
----
-
-### 🌐 DigitalOcean Production Version (Server)
-
-**Minimum Requirements:**
-- **OS**: Ubuntu 22.04 or 24.04 LTS
-- **Python**: 3.10 - 3.11
-- **RAM**: 2 GB
-- **CPU**: 1 vCPU
-- **Storage**: 10 GB SSD
-- **Network**: Public IP with 0.0.0.0 binding
-- **Dependencies**: `requirements.txt` (includes gevent)
-
-**Recommended for 50+ devices:**
-- **RAM**: 4 GB+
-- **CPU**: 2 vCPUs
-- **Storage**: 20 GB SSD
-- **Network**: 100 Mbps+ bandwidth
-
-**Installation:**
-- Automated setup with `install.sh`
-- Systemd service (auto-start on boot)
-- Gunicorn + Gevent for production performance
-- Optional: Nginx reverse proxy + SSL
-
-{% content-ref url="getting-started/digitalocean-production.md" %}
-[digitalocean-production.md](getting-started/digitalocean-production.md)
-{% endcontent-ref %}
-
----
+{% hint style="info" %}
+**Need detailed requirements?** See [Complete System Requirements Guide](getting-started/system-requirements.md)
+{% endhint %}
 
 {% content-ref url="getting-started/system-requirements.md" %}
 [system-requirements.md](getting-started/system-requirements.md)
